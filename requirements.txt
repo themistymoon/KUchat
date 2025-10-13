@@ -1,0 +1,14 @@
+# Frontend Requirements
+gradio>=4.0.0
+requests>=2.31.0
+Pillow>=10.0.0
+numpy>=1.24.0
+
+# Web Search (optional for frontend, required for backend)
+duckduckgo-search>=4.0.0
+beautifulsoup4>=4.12.0
+wikipedia>=1.4.0
+
+# Optional: For local audio/video processing
+pydub>=0.25.1
+moviepy>=1.0.3
