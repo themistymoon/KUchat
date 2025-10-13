@@ -1,6 +1,6 @@
-# 🎓 KUchat - Kasetsart University AI Chatbot
+# KUchat - Kasetsart University AI Chatbot
 
-A powerful multi-modal AI chatbot system powered by dual AI models (Qwen3-Omni-30B + GPT-OSS-120B) with RAG capabilities, designed to answer questions about Kasetsart University programs and general knowledge.
+A multi-modal AI chatbot system powered by dual large language models (Qwen3-Omni-30B and GPT-OSS-120B) with Retrieval-Augmented Generation capabilities. The system is designed to answer questions about Kasetsart University academic programs and provide general knowledge assistance.
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -8,140 +8,49 @@ A powerful multi-modal AI chatbot system powered by dual AI models (Qwen3-Omni-3
 
 ---
 
-## ✨ Features
+## Features
 
-### 🤖 Dual AI Models
-- **Qwen3-Omni-30B**: Multimodal support (text, images, audio, video)
-- **GPT-OSS-120B**: High-performance text generation
-- Both models optimized for A100 GPU
+### Dual AI Model Architecture
+- **Qwen3-Omni-30B-A3B-Instruct**: Multimodal model supporting text, images, audio, and video inputs
+- **GPT-OSS-120B-Unsloth-BNB-4bit**: High-performance text generation model with 4-bit quantization
+- Both models optimized for NVIDIA A100 GPU execution
 
-### 📚 RAG System (Retrieval-Augmented Generation)
-- **170+ Curriculum PDFs**: Complete Kasetsart University program information
-- **20 Faculties**: Agriculture, Engineering, Science, Business, and more
-- **Auto-loading**: Automatically indexes all documents at startup
-- **ChromaDB**: Fast vector database for semantic search
-- **Smart Retrieval**: Finds relevant information from documents
+### Retrieval-Augmented Generation (RAG)
+- **Document Collection**: 170+ curriculum PDF files covering Kasetsart University programs
+- **Faculty Coverage**: 20 faculties including Agriculture, Engineering, Science, Business, and more
+- **Vector Database**: ChromaDB for efficient semantic search and retrieval
+- **Auto-loading**: Automatic document indexing at system startup
+- **Embedding Model**: sentence-transformers/all-MiniLM-L6-v2 for document vectorization
 
-### 🌐 Web Search Integration
-- **DuckDuckGo**: Real-time web search
-- **Wikipedia**: Encyclopedia knowledge
-- **Thai + English**: Bilingual search support
+### Web Search Integration
+- **DuckDuckGo Search**: Real-time web search capabilities
+- **Wikipedia Integration**: Encyclopedia knowledge retrieval
+- **Bilingual Support**: Thai and English language search
 
-### 🎨 Modern Interface
-- **Gradio 4.0+**: Beautiful, responsive chat UI
-- **Multi-modal Upload**: Drag & drop images, audio, video
-- **Real-time Streaming**: Fast response generation
-- **Customizable**: Temperature, max tokens, RAG/web search toggles
-
----
-
-## 🚀 Quick Start
-
-### 📖 **New User? Start Here!**
-
-We have **4 guides** to help you get started:
-
-1. **[SIMPLE_START_GUIDE.md](SIMPLE_START_GUIDE.md)** ⭐ **RECOMMENDED**
-   - Visual 4-step process
-   - Perfect for beginners
-   - 20 minutes to deploy
-
-2. **[FILES_TO_UPLOAD.md](FILES_TO_UPLOAD.md)** 📤
-   - Shows exactly what files go where
-   - Answers common questions
-
-3. **[COLAB_DEPLOYMENT_GUIDE.md](COLAB_DEPLOYMENT_GUIDE.md)** 📋
-   - Complete detailed instructions
-   - Troubleshooting section
-
-4. **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** ✅
-   - Printable checklist
-   - Track your progress
+### User Interface
+- **Gradio 4.0+**: Modern web-based chat interface
+- **Multimodal Upload**: Support for images, audio, and video files
+- **Real-time Streaming**: Fast response generation with streaming output
+- **Configurable Parameters**: Temperature, max tokens, RAG toggle, web search toggle
 
 ---
 
-## 📋 Prerequisites
+## System Architecture
+
+The system consists of two main components:
 
 ### Backend (Google Colab)
-- Google Colab Pro Plus subscription (for A100 GPU)
-- HuggingFace account ([Get token](https://huggingface.co/settings/tokens))
-- Ngrok account ([Get token](https://dashboard.ngrok.com/get-started/your-authtoken))
+- Hosts both AI models on A100 GPU
+- Runs FastAPI server for API endpoints
+- Manages RAG system and document retrieval
+- Handles web search integration
+- Provides public access via Ngrok tunnel
 
 ### Frontend (Local Computer)
-- Python 3.9 or higher
-- 4GB+ RAM
-- Internet connection
-
----
-
-## 🎯 The Simple Version
-
-### What You Upload to Colab:
-```
-✅ colab_backend.ipynb  (the notebook)
-✅ docs/ folder         (your PDF documents)
-```
-
-### What Stays on Your Computer:
-```
-🖥️ frontend_app.py
-🖥️ requirements.txt
-```
-
-### What You Run:
-
-**In Google Colab:**
-1. Upload notebook and docs folder
-2. Set runtime to A100 GPU
-3. Paste your tokens (HuggingFace + Ngrok)
-4. Run all cells in order
-5. Copy the Ngrok URL
-
-**On Your Computer:**
-```powershell
-# Edit frontend_app.py with your Ngrok URL
-# Then run:
-pip install -r requirements.txt
-python frontend_app.py
-```
-
-**Open Browser:**
-```
-http://127.0.0.1:7860
-```
-
----
-
-## 📁 Project Structure
-
-```
-KUchat/
-├── colab_backend.ipynb              # Main Colab notebook (backend)
-├── frontend_app.py                  # Gradio frontend (local)
-├── setup.py                         # Automated setup script
-├── requirements.txt                 # Frontend dependencies
-├── start_frontend.ps1               # Quick start script (Windows)
-├── .gitignore                       # Git ignore rules
-│
-├── docs/                            # Document repository
-│   ├── Agriculture/                 # 10 PDFs
-│   ├── Science/                     # 18 PDFs
-│   ├── Engineering/                 # 18 PDFs
-│   ├── Business Administration/     # 7 PDFs
-│   ├── Humanities/                  # 25 PDFs
-│   └── ... (15 more faculties)      # 110+ more PDFs
-│
-├── SIMPLE_START_GUIDE.md            # Beginner-friendly guide
-├── FILES_TO_UPLOAD.md               # File upload reference
-├── COLAB_DEPLOYMENT_GUIDE.md        # Detailed deployment guide
-├── DEPLOYMENT_CHECKLIST.md          # Progress checklist
-├── ARCHITECTURE.md                  # System architecture
-└── README.md                        # This file
-```
-
----
-
-## 🏗️ Architecture
+- Gradio web interface for user interaction
+- Connects to backend via HTTPS
+- Handles file uploads and multimodal inputs
+- Manages chat history and UI state
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -151,277 +60,452 @@ KUchat/
     GOOGLE COLAB (Backend)              LOCAL COMPUTER (Frontend)
     ══════════════════════              ═════════════════════════
     
-    ┌─────────────────────┐            ┌──────────────────────┐
-    │  Qwen3-Omni-30B     │            │   Gradio Web UI      │
-    │  (Multimodal)       │            │   (Chat Interface)   │
-    └─────────────────────┘            └──────────────────────┘
-    
-    ┌─────────────────────┐                      ▲
-    │  GPT-OSS-120B       │                      │
-    │  (Text)             │                      │
-    └─────────────────────┘            HTTP/HTTPS Requests
-    
-    ┌─────────────────────┐                      │
-    │  RAG System         │                      ▼
-    │  - ChromaDB         │            ┌──────────────────────┐
-    │  - 170+ PDFs        │◄───────────┤  Ngrok Tunnel        │
-    │  - Auto-loading     │            │  (Public URL)        │
-    └─────────────────────┘            └──────────────────────┘
-    
-    ┌─────────────────────┐
-    │  Web Search         │
-    │  - DuckDuckGo       │
-    │  - Wikipedia        │
-    └─────────────────────┘
-    
-    ┌─────────────────────┐
-    │  FastAPI Server     │
-    │  Port: 8000         │
-    └─────────────────────┘
+    - Qwen3-Omni-30B Model              - Gradio Web Interface
+    - GPT-OSS-120B Model                - HTTP Client
+    - RAG System (ChromaDB)             - File Upload Handlers
+    - Web Search System                 - Chat UI Management
+    - FastAPI Server (Port 8000)
+    - Ngrok Public Tunnel               
+                   │                              │
+                   └──── HTTPS Connection ────────┘
 ```
 
 ---
 
-## 🎓 Document Coverage
+## Prerequisites
 
-KUchat includes comprehensive information about **Kasetsart University programs**:
+### Backend Requirements (Google Colab)
+- Google Colab Pro Plus subscription (required for A100 GPU access)
+- HuggingFace account with access token ([Create token](https://huggingface.co/settings/tokens))
+- Ngrok account with authentication token ([Get token](https://dashboard.ngrok.com/get-started/your-authtoken))
 
-| Faculty | Programs | Example Programs |
-|---------|----------|------------------|
-| Agriculture | 10 | Agricultural Science, Food Science, Tropical Agriculture |
-| Science | 18 | Computer Science, Physics, Chemistry, Biology |
-| Engineering | 18 | Computer Engineering, Mechanical, Electrical, Civil |
+### Frontend Requirements (Local Computer)
+- Python 3.9 or higher
+- 4GB+ RAM
+- Stable internet connection
+
+---
+
+## Installation and Setup
+
+### Step 1: Clone Repository
+
+```bash
+git clone https://github.com/themistymoon/KUchat.git
+cd KUchat
+```
+
+### Step 2: Backend Setup (Google Colab)
+
+1. **Upload Notebook**
+   - Navigate to [Google Colab](https://colab.research.google.com/)
+   - Upload `colab_backend.ipynb` from this repository
+
+2. **Configure Runtime**
+   - Click Runtime → Change runtime type
+   - Set Hardware accelerator to GPU
+   - Set GPU type to A100
+   - Click Save
+
+3. **Upload Documents**
+   - In Colab's file browser (left sidebar), create folder `/content/docs/`
+   - Upload the entire `docs` folder from this repository
+   - Ensure folder structure is preserved with all faculty subfolders
+
+4. **Configure Tokens**
+   - In Cell 7: Replace `YOUR_HUGGINGFACE_TOKEN` with your HuggingFace token
+   - In Cell 21: Replace `YOUR_NGROK_TOKEN` with your Ngrok authentication token
+
+5. **Execute Cells**
+   - Run cells sequentially from top to bottom
+   - Wait for each cell to complete before proceeding
+   - Cell 3: Install dependencies (~5 minutes)
+   - Cell 7: Verify GPU and configure HuggingFace
+   - Cell 9: Load Qwen model (~3-5 minutes)
+   - Cell 12: Load GPT model (~2-3 minutes)
+   - Cell 15: Initialize RAG system
+   - Cell 17: Start FastAPI server
+   - Cell 21: Create Ngrok tunnel and obtain public URL
+   - Cell 23: Auto-load documents (~2-5 minutes)
+   - Cell 24: Initialize web search system
+
+6. **Copy Ngrok URL**
+   - After Cell 21 completes, copy the PUBLIC URL displayed
+   - Example format: `https://xxxx-xx-xx-xx-xx.ngrok-free.app`
+
+### Step 3: Frontend Setup (Local Computer)
+
+1. **Install Dependencies**
+
+```bash
+cd KUchat
+pip install -r requirements.txt
+```
+
+2. **Configure API Endpoint**
+   - Open `frontend_app.py` in a text editor
+   - Locate line 16: `API_URL = "YOUR_NGROK_URL_HERE"`
+   - Replace with your Ngrok URL from Step 2.6
+   - Save the file
+
+3. **Run Frontend Application**
+
+```bash
+python frontend_app.py
+```
+
+4. **Access Web Interface**
+   - Open web browser
+   - Navigate to `http://127.0.0.1:7860`
+   - The chat interface should load successfully
+
+---
+
+## Project Structure
+
+```
+KUchat/
+├── colab_backend.ipynb              # Google Colab notebook (backend server)
+├── frontend_app.py                  # Gradio frontend application
+├── setup.py                         # Automated setup script
+├── requirements.txt                 # Python dependencies for frontend
+├── start_frontend.ps1               # Windows PowerShell startup script
+├── .gitignore                       # Git ignore rules
+├── LICENSE                          # MIT License
+├── README.md                        # This documentation
+├── ARCHITECTURE.md                  # System architecture documentation
+│
+└── docs/                            # Document repository (170+ PDFs)
+    ├── Agriculture/                 # 10 curriculum PDFs
+    ├── Science/                     # 18 curriculum PDFs
+    ├── Engineering/                 # 18 curriculum PDFs
+    ├── Business Administration/     # 7 curriculum PDFs
+    ├── Humanities/                  # 25 curriculum PDFs
+    ├── Economics/                   # 7 curriculum PDFs
+    ├── Education/                   # 9 curriculum PDFs
+    ├── Social Sciences/             # 8 curriculum PDFs
+    ├── Veterinary Medicine/         # 2 curriculum PDFs
+    ├── Medicine/                    # 1 curriculum PDF
+    └── ... (10 additional faculties)
+```
+
+---
+
+## Document Coverage
+
+The system includes comprehensive curriculum information for Kasetsart University:
+
+| Faculty | Programs | Example Disciplines |
+|---------|----------|---------------------|
+| Agriculture | 10 | Agricultural Science, Food Science, Animal Science |
+| Science | 18 | Computer Science, Physics, Chemistry, Mathematics |
+| Engineering | 18 | Computer, Mechanical, Electrical, Civil Engineering |
 | Business Administration | 7 | Marketing, Finance, Management, Accounting |
-| Humanities | 25 | English, Tourism, Communication Arts, Music |
+| Humanities | 25 | English, Tourism, Communication Arts, Languages |
 | Economics | 7 | Economics, Agricultural Economics, Cooperatives |
-| Education | 9 | Mathematics Education, Science Education, PE |
-| Social Sciences | 7 | Political Science, Sociology, Law, Psychology |
+| Education | 9 | Mathematics, Science, Physical Education |
+| Social Sciences | 8 | Political Science, Psychology, Sociology, Law |
 | Veterinary Medicine | 2 | Veterinary Medicine, Veterinary Science |
 | Medicine | 1 | Doctor of Medicine |
-| **...and 10 more faculties** | **70+** | **170+ total programs** |
+| Pharmacy | 1 | Pharmacy |
+| Nursing | 1 | Nursing |
+| Forestry | 4 | Forestry, Wood Science, Pulp and Paper Technology |
+| Fisheries | 1 | Fisheries |
+| Veterinary Technology | 2 | Veterinary Technology, Animal Nursing |
+| Environment | 3 | Environmental Science and Technology |
+| Architecture | 4 | Architecture, Landscape Architecture |
+| Agro-Industry | 8 | Food Engineering, Biotechnology, Textiles |
+| Interdisciplinary Studies | 2 | Tourism Management, Service Industry |
+| College of Interdisciplinary Studies | 1 | Land Science for Sustainable Development |
+
+**Total**: 20 faculties, 170+ academic programs
 
 ---
 
-## 💡 Usage Examples
+## Usage
 
-### Basic Chat
-```
-User: "Hello! How are you?"
-AI: "Hello! I'm doing well, thank you for asking..."
-```
+### Basic Text Interaction
 
-### RAG Query (About KU Programs)
-```
-User: "What courses are in the Computer Science program?"
-AI: [Searches through CS curriculum PDF]
-    "The Computer Science program includes courses such as:
-    - Data Structures and Algorithms
-    - Database Systems
-    - Software Engineering
-    - Artificial Intelligence..."
-```
+1. Select model (Qwen3-Omni or GPT-OSS-120B)
+2. Type message in the text input field
+3. Click Send or press Enter
+4. View AI response in chat history
 
-### Web Search Query
+### Document Retrieval (RAG)
+
+1. Enable "Enable RAG" checkbox
+2. Ask questions about Kasetsart University programs
+3. System retrieves relevant information from curriculum PDFs
+4. Response includes context from documents
+
+Example query:
 ```
-User: "What's the latest news about AI in 2025?"
-AI: [Searches DuckDuckGo + Wikipedia]
-    "According to recent sources, in 2025..."
+User: "What courses are required for the Computer Science program?"
+System: [Retrieves CS curriculum PDF] → Provides course list
 ```
 
-### Multimodal Query
+### Web Search
+
+1. Enable "Enable Web Search" checkbox
+2. Ask questions requiring current information
+3. System searches DuckDuckGo and Wikipedia
+4. Response includes web search results
+
+Example query:
 ```
-User: [Uploads image of a math equation]
-      "Can you solve this?"
-AI: [Analyzes image with Qwen3-Omni]
-    "Looking at the equation in your image..."
+User: "What are the latest developments in artificial intelligence?"
+System: [Searches web] → Provides current information
 ```
+
+### Multimodal Input
+
+1. Click "Upload Image" or "Upload Audio" button
+2. Select file from local system
+3. Optionally add text query
+4. Click Send
+5. Qwen3-Omni model processes multimodal input
+
+Supported formats:
+- Images: JPG, PNG, BMP, GIF
+- Audio: MP3, WAV, M4A
+- Video: MP4, AVI, MOV
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
-### Required Tokens
+### API Tokens
 
-You'll need to obtain these tokens before deployment:
+| Token | Purpose | Obtain From | Configuration Location |
+|-------|---------|-------------|----------------------|
+| HuggingFace Token | Model downloads | [HuggingFace Settings](https://huggingface.co/settings/tokens) | `colab_backend.ipynb` Cell 7 |
+| Ngrok Token | Public tunnel | [Ngrok Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken) | `colab_backend.ipynb` Cell 21 |
+| Ngrok URL | Frontend connection | Generated by Cell 21 | `frontend_app.py` Line 16 |
 
-1. **HuggingFace Token**
-   - Get from: https://huggingface.co/settings/tokens
-   - Type: Read access
-   - Used for: Downloading AI models
+### Model Parameters
 
-2. **Ngrok Token**
-   - Get from: https://dashboard.ngrok.com/get-started/your-authtoken
-   - Used for: Creating public URL for Colab backend
-
-### Where to Paste Tokens
-
-| Token | File | Location |
-|-------|------|----------|
-| HuggingFace | `colab_backend.ipynb` | Cell 7, line ~90 |
-| Ngrok | `colab_backend.ipynb` | Cell 21, line ~1015 |
-| Ngrok URL | `frontend_app.py` | Line 16 |
+Adjustable via frontend interface:
+- **Temperature**: Controls response randomness (0.1 - 2.0)
+- **Max Tokens**: Maximum response length (256 - 4096)
+- **RAG Toggle**: Enable/disable document retrieval
+- **Web Search Toggle**: Enable/disable web search
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Backend Connection Failed
-**Problem**: Frontend can't connect to Colab backend
 
-**Solution**:
-1. Verify Colab notebook is still running
-2. Check Ngrok URL in `frontend_app.py` matches Cell 21 output
-3. Ensure URL includes `https://`
+**Symptom**: Frontend cannot connect to backend
+
+**Solutions**:
+1. Verify Colab notebook is running (check Cell 17 status)
+2. Confirm Ngrok URL in `frontend_app.py` matches Cell 21 output
+3. Ensure URL includes `https://` protocol
+4. Check Colab session has not timed out
 
 ### No Documents Found
-**Problem**: RAG system shows no documents loaded
 
-**Solution**:
-1. Check `/content/docs/` folder exists in Colab
-2. Verify PDFs are uploaded to correct location
-3. Re-run Cell 23 (Auto-load documents)
+**Symptom**: RAG system reports no documents loaded
 
-### Out of Memory
-**Problem**: GPU runs out of memory
+**Solutions**:
+1. Verify `/content/docs/` folder exists in Colab file browser
+2. Check PDFs are uploaded with correct folder structure
+3. Re-execute Cell 23 (Auto-load documents)
+4. Review Cell 23 output for file loading statistics
 
-**Solution**:
-1. Change runtime to A100 GPU (Runtime → Change runtime type)
-2. Restart runtime
-3. Re-run all cells
+### GPU Memory Error
 
-### Model Download Fails
-**Problem**: Models won't download
+**Symptom**: Out of memory error during model loading
 
-**Solution**:
-1. Check HuggingFace token is correct
-2. Verify you have Read access token
-3. Check internet connection in Colab
+**Solutions**:
+1. Confirm runtime is set to A100 GPU (not T4 or other GPUs)
+2. Restart Colab runtime (Runtime → Restart runtime)
+3. Re-execute all cells in sequence
+4. Close other GPU-intensive processes
 
----
+### Model Download Failure
 
-## 📊 Performance
+**Symptom**: Models fail to download from HuggingFace
 
-### Model Specifications
+**Solutions**:
+1. Verify HuggingFace token is correct and active
+2. Confirm token has "Read" access permissions
+3. Check Colab internet connectivity
+4. Retry cell execution after brief wait
 
-| Model | Size | GPU Memory | Load Time | Speed |
-|-------|------|------------|-----------|-------|
-| Qwen3-Omni-30B | ~30B params | ~40GB | 3-5 min | Fast |
-| GPT-OSS-120B-4bit | ~120B (quantized) | ~35GB | 2-3 min | Very Fast |
+### Frontend Installation Issues
 
-### RAG Performance
+**Symptom**: `pip install` fails or packages missing
 
-- **Document Loading**: ~2-5 minutes for 170+ PDFs
-- **Indexing**: ~1000 chunks per minute
-- **Query Speed**: 100-200ms per retrieval
-- **Accuracy**: High relevance with semantic search
+**Solutions**:
+1. Upgrade pip: `python -m pip install --upgrade pip`
+2. Install packages individually if batch install fails
+3. Verify Python version is 3.9 or higher
+4. Use virtual environment to avoid conflicts
 
 ---
 
-## 🔒 Security
+## Performance Specifications
 
-### Protected Files (.gitignore)
-- API tokens and secrets
-- Configuration files with URLs
-- Virtual environment
-- ChromaDB database
-- Upload cache
+### Model Performance
+
+| Model | Parameters | GPU Memory | Load Time | Inference Speed |
+|-------|-----------|------------|-----------|-----------------|
+| Qwen3-Omni-30B | ~30 billion | ~40 GB | 3-5 minutes | Fast |
+| GPT-OSS-120B-4bit | ~120 billion (quantized) | ~35 GB | 2-3 minutes | Very Fast |
+
+### RAG System Performance
+
+- **Document Loading**: 2-5 minutes for 170+ PDFs
+- **Indexing Rate**: ~1000 text chunks per minute
+- **Retrieval Speed**: 100-200 milliseconds per query
+- **Embedding Model**: sentence-transformers/all-MiniLM-L6-v2
+- **Chunk Size**: 1000 characters with 200 character overlap
+
+### System Requirements
+
+**Minimum**:
+- A100 GPU (40GB VRAM minimum)
+- 32GB System RAM
+- 50GB Storage (for models and documents)
+- 10 Mbps internet connection
+
+**Recommended**:
+- A100 GPU (80GB VRAM)
+- 64GB System RAM
+- 100GB Storage
+- 50 Mbps internet connection
+
+---
+
+## Security Considerations
+
+### Protected Information
+
+The `.gitignore` file protects:
+- API tokens and authentication credentials
+- Configuration files containing URLs
+- Virtual environment directories
+- Vector database files
+- Temporary upload cache
 - Log files
 
 ### Best Practices
-- Never commit tokens to repository
-- Use environment variables for sensitive data
-- Regenerate Ngrok URL for each session
-- Keep HuggingFace token private
+
+1. Never commit tokens or secrets to version control
+2. Regenerate Ngrok URL for each session
+3. Use environment variables for sensitive configuration
+4. Keep HuggingFace token private
+5. Regularly rotate authentication tokens
+6. Review `.gitignore` before committing changes
 
 ---
 
-## 📝 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for complete terms and conditions.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 ### AI Models
-- **Qwen3-Omni-30B** by Alibaba Cloud
-- **GPT-OSS-120B** by OpenGPT-X
 
-### Technologies
-- **Google Colab** - Cloud GPU platform
+- **Qwen3-Omni-30B-A3B-Instruct** developed by Alibaba Cloud
+- **GPT-OSS-120B-Unsloth-BNB-4bit** developed by OpenGPT-X consortium
+
+### Technology Stack
+
+- **Google Colab** - Cloud GPU computing platform
 - **Gradio** - Web interface framework
-- **LangChain** - RAG framework
+- **LangChain** - RAG orchestration framework
 - **ChromaDB** - Vector database
 - **FastAPI** - Backend API framework
-- **Ngrok** - Tunneling service
+- **Ngrok** - Secure tunneling service
+- **HuggingFace Transformers** - Model loading and inference
+- **PyTorch** - Deep learning framework
 
-### Data
-- **Kasetsart University** - Curriculum information
-- All PDF documents belong to their respective programs and faculties
+### Data Sources
+
+- **Kasetsart University** - Curriculum documentation and program information
+- All PDF documents are property of their respective academic programs and faculties
 
 ---
 
-## 📞 Support
+## Support and Contributing
 
 ### Getting Help
-1. Check the guides: `SIMPLE_START_GUIDE.md`, `COLAB_DEPLOYMENT_GUIDE.md`
-2. Review `DEPLOYMENT_CHECKLIST.md` for missed steps
-3. See troubleshooting section above
-4. Open an issue on GitHub
+
+1. Review this README for setup instructions
+2. Check the [ARCHITECTURE.md](ARCHITECTURE.md) file for system details
+3. Examine troubleshooting section above
+4. Open an issue on GitHub for unresolved problems
 
 ### Contributing
-Contributions are welcome! Please:
+
+Contributions are welcome. Please follow these steps:
+
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Push to branch (`git push origin feature/improvement`)
+5. Open a Pull Request
+
+### Development Roadmap
+
+**Current Version (v1.0)**:
+- Dual AI model support
+- RAG system with 170+ documents
+- Web search integration
+- Multimodal capabilities
+- Auto-loading document system
+
+**Planned Features**:
+- Thai language interface localization
+- Voice input and output capabilities
+- Frontend document upload functionality
+- Persistent chat history storage
+- User authentication system
+- Mobile-responsive design improvements
+- Docker containerization
+- Self-hosted deployment documentation
 
 ---
 
-## 🗺️ Roadmap
+## Technical Statistics
 
-### Current Version (v1.0)
-- ✅ Dual AI models (Qwen3-Omni + GPT-OSS)
-- ✅ RAG system with 170+ PDFs
-- ✅ Web search integration
-- ✅ Multimodal support
-- ✅ Auto-loading documents
-
-### Future Plans
-- [ ] Multi-language support (Thai interface)
-- [ ] Voice input/output
-- [ ] Document upload via frontend
-- [ ] Chat history persistence
-- [ ] User authentication
-- [ ] Mobile-responsive design
-- [ ] Docker deployment option
-- [ ] Local deployment guide (without Colab)
-
----
-
-## 📈 Stats
-
-- **Lines of Code**: ~1,500+
+- **Codebase**: ~1,500 lines of Python
 - **Documents**: 170+ PDF curriculum files
-- **Faculties**: 20
-- **Models**: 2 (Qwen3-Omni + GPT-OSS)
-- **Guides**: 4 comprehensive deployment guides
-- **Supported Formats**: PDF, TXT, MD, Images, Audio, Video
+- **Faculties Covered**: 20 academic faculties
+- **AI Models**: 2 large language models
+- **Supported Input Formats**: Text, PDF, Images (JPG/PNG), Audio (MP3/WAV), Video (MP4)
+- **API Endpoints**: 8 FastAPI routes
+- **Vector Database**: ChromaDB with ~15,000+ text chunks
 
 ---
 
-## ⭐ Star History
+## Citation
 
-If you find this project helpful, please consider giving it a star! ⭐
+If you use this system in academic work, please cite:
+
+```
+KUchat: A Multi-Modal AI Chatbot with RAG for Kasetsart University
+Repository: https://github.com/themistymoon/KUchat
+Year: 2025
+```
 
 ---
 
-<div align="center">
+## Contact
 
-**Built with ❤️ for Kasetsart University students and faculty**
+For questions, issues, or collaboration inquiries:
+- Open an issue on GitHub
+- Submit a pull request for contributions
+- Review existing documentation before requesting support
 
-**Questions? Open an issue or check the guides!**
+---
 
-[Documentation](SIMPLE_START_GUIDE.md) • [Architecture](ARCHITECTURE.md) • [License](LICENSE)
+**Built for Kasetsart University students and faculty**
 
-</div>
+[Documentation](README.md) • [Architecture](ARCHITECTURE.md) • [License](LICENSE)
