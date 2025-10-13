@@ -8,9 +8,37 @@ A multi-modal AI chatbot system powered by dual large language models (Qwen3-Omn
 
 ---
 
+## Deployment Options
+
+### 🧪 Test Version (Google Colab Free/T4)
+For testing and development without costs:
+- **Notebook**: `colab_backend_test.ipynb`
+- **GPU**: T4 (15GB VRAM) - Available on Colab Free
+- **Model**: Qwen2-7B-Instruct (7B parameters)
+- **Speed**: 5-10 tokens/second
+- **Cost**: Free
+- **Purpose**: Test functionality before production deployment
+
+### 🚀 Production Version (Google Colab Pro+ A100)
+For production use with best performance:
+- **Notebook**: `colab_backend.ipynb`
+- **GPU**: A100 (80GB VRAM) - Requires Colab Pro+
+- **Models**: Qwen3-Omni-30B + GPT-OSS-120B
+- **Speed**: 20-50 tokens/second
+- **Cost**: ~$1/hour
+- **Purpose**: Production deployment
+
+---
+
 ## Features
 
-### Dual AI Model Architecture
+### AI Model Architecture
+**Test Version:**
+- **Qwen2-7B-Instruct**: 7B parameter model with 4-bit quantization
+- Fits on T4 GPU (15GB VRAM)
+- Good quality for testing
+
+**Production Version:**
 - **Qwen3-Omni-30B-A3B-Instruct**: Multimodal model supporting text, images, audio, and video inputs
 - **GPT-OSS-120B-Unsloth-BNB-4bit**: High-performance text generation model with 4-bit quantization
 - Both models optimized for NVIDIA A100 GPU execution
@@ -74,19 +102,64 @@ The system consists of two main components:
 
 ## Prerequisites
 
-### Backend Requirements (Google Colab)
-- Google Colab Pro Plus subscription (required for A100 GPU access)
-- HuggingFace account with access token ([Create token](https://huggingface.co/settings/tokens))
-- Ngrok account with authentication token ([Get token](https://dashboard.ngrok.com/get-started/your-authtoken))
+### For Test Version (Colab Free)
+- Google account (free Colab access)
+- HuggingFace account ([Create token](https://huggingface.co/settings/tokens))
+- Ngrok account ([Get token](https://dashboard.ngrok.com/get-started/your-authtoken))
+- Python 3.9+ for frontend
 
-### Frontend Requirements (Local Computer)
-- Python 3.9 or higher
-- 4GB+ RAM
-- Stable internet connection
+### For Production Version (Colab Pro+)
+- Google Colab Pro Plus subscription (for A100 GPU access)
+- HuggingFace account with access token
+- Ngrok account with authentication token
+- Python 3.9+ for frontend
 
 ---
 
 ## Installation and Setup
+
+### 🧪 Option 1: Test Version (Free - Recommended First)
+
+**Perfect for testing before committing to Colab Pro+!**
+
+#### Step 1: Deploy Test Backend on Colab Free
+
+1. Open **`colab_backend_test.ipynb`** in Google Colab
+2. **Select T4 GPU**: Runtime → Change runtime type → **T4 GPU**
+3. **Run all cells** in order:
+   - Install dependencies
+   - Load Qwen2-7B model (7B parameters)
+   - Initialize RAG system
+   - Start FastAPI server
+   - Start Ngrok tunnel
+4. **Copy the public URL** (e.g., `https://xxxx-xx-xx.ngrok.io`)
+
+#### Step 2: Run Frontend on Local Computer
+
+1. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Edit `frontend_app.py` and update the API URL:
+   ```python
+   API_URL = "https://your-ngrok-url-here"  # Paste the URL from Colab
+   ```
+
+3. Run the frontend:
+   ```bash
+   python frontend_app.py
+   ```
+
+4. Open browser to `http://localhost:7860`
+
+✅ **Test the chatbot!** If everything works, you can upgrade to production.
+
+---
+
+### 🚀 Option 2: Production Version (Colab Pro+)
+
+For production deployment with best performance:
 
 ### Step 1: Clone Repository
 
@@ -165,7 +238,8 @@ python frontend_app.py
 
 ```
 KUchat/
-├── colab_backend.ipynb              # Google Colab notebook (backend server)
+├── colab_backend_test.ipynb         # Test backend (T4 GPU, Qwen2-7B-Instruct)
+├── colab_backend.ipynb              # Production backend (A100 GPU, Qwen3-Omni + GPT-OSS)
 ├── frontend_app.py                  # Gradio frontend application
 ├── setup.py                         # Automated setup script
 ├── requirements.txt                 # Python dependencies for frontend
@@ -173,6 +247,7 @@ KUchat/
 ├── .gitignore                       # Git ignore rules
 ├── LICENSE                          # MIT License
 ├── README.md                        # This documentation
+├── TROUBLESHOOTING.md               # Common issues and solutions
 ├── ARCHITECTURE.md                  # System architecture documentation
 │
 └── docs/                            # Document repository (170+ PDFs)
@@ -460,6 +535,7 @@ Contributions are welcome. Please follow these steps:
 - Web search integration
 - Multimodal capabilities
 - Auto-loading document system
+- Local testing version with smaller models
 
 **Planned Features**:
 - Thai language interface localization
@@ -470,6 +546,25 @@ Contributions are welcome. Please follow these steps:
 - Mobile-responsive design improvements
 - Docker containerization
 - Self-hosted deployment documentation
+
+---
+
+## Deployment Options Comparison
+
+| Aspect | Local Test Version | Full Production Version |
+|--------|-------------------|-------------------------|
+| **Purpose** | Testing & Development | Production Use |
+| **Model** | TinyLlama (1.1B) | Qwen3-Omni (30B) + GPT-OSS (120B) |
+| **Hardware** | CPU/Local GPU | Google Colab A100 GPU |
+| **RAM Required** | 8-16GB | 80GB GPU Memory |
+| **Setup Time** | 5 minutes | 15-20 minutes |
+| **Cost** | Free | ~$50/month (Colab Pro+) |
+| **Response Quality** | Good for testing | Excellent |
+| **Multimodal** | No (text only) | Yes (images, audio, video) |
+| **Speed** | 1-5 tokens/sec (CPU) | 20-50 tokens/sec (GPU) |
+| **Use Case** | Code testing, development | Real users, production |
+
+**Recommendation**: Start with local test version to verify everything works, then deploy to Colab for production use.
 
 ---
 
