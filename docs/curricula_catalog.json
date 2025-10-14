@@ -1,0 +1,2253 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-10-14",
+  "total_faculties": 20,
+  "total_programs": 131,
+  "curricula": [
+    {
+      "id": "AGR-001",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. คหกรรมศาสตร์",
+      "program_en": "Bachelor of Science Program in Home Economics",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science Program in Home Economics.pdf",
+      "keywords": [
+        "คหกรรมศาสตร์",
+        "Home",
+        "Program",
+        "Economics"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-002",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. การจัดการศัตรูพืชและสัตว์",
+      "program_en": "Bachelor of Science Program in Pest Management",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science Program in Pest Management.pdf",
+      "keywords": [
+        "Management",
+        "veterinary",
+        "animal",
+        "การจัดการศัตรูพืชและสัตว์",
+        "Program",
+        "Pest"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-003",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. เคมีการเกษตร",
+      "program_en": "Bachelor of Science (Agricultural Chemistry)",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science (Agricultural Chemistry).pdf",
+      "keywords": [
+        "เคมีการเกษตร",
+        "(Agricultural",
+        "farming",
+        "Chemistry)",
+        "agriculture"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-004",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. วิทยาศาสตร์เกษตร",
+      "program_en": "Bachelor of Science Program in Agricultural Science",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science Program in Agricultural Science.pdf",
+      "keywords": [
+        "วิทยาศาสตร์เกษตร",
+        "farming",
+        "Agricultural",
+        "Program",
+        "agriculture"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-005",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. อาหาร โภชนาการ และการกำหนดอาหาร",
+      "program_en": "Bachelor of Science Program in Food, Nutrition and Dietetics",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science Program in Food, Nutrition and Dietetics.pdf",
+      "keywords": [
+        "and",
+        "Food,",
+        "Dietetics",
+        "Nutrition",
+        "Program",
+        "อาหาร โภชนาการ และการกำหนดอาหาร"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-006",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. อาหารและโภชนาการ",
+      "program_en": "Bachelor of Science (Food and Nutrition)",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science (Food and Nutrition).pdf",
+      "keywords": [
+        "อาหารและโภชนาการ",
+        "and",
+        "Nutrition)",
+        "(Food"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-007",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.ม. เทคโนโลยีระบบเกษตร",
+      "program_en": "Master of Science Program in Agricultural Systems Technology",
+      "degree": "วท.ม.",
+      "file_path": "Agriculture/Master of Science Program in Agricultural Systems Technology.pdf",
+      "keywords": [
+        "Systems",
+        "วท.ม. เทคโนโลยีระบบเกษตร",
+        "Agricultural",
+        "farming",
+        "Program",
+        "Master",
+        "Technology",
+        "agriculture"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-008",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. สัตวศาสตร์อุตสาหกรรม",
+      "program_en": "Bachelor of Science (Industrial Animal Science)",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science (Industrial Animal Science).pdf",
+      "keywords": [
+        "(Industrial",
+        "Animal",
+        "veterinary",
+        "animal",
+        "สัตวศาสตร์อุตสาหกรรม"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-009",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. เกษตรเขตร้อน",
+      "program_en": "Bachelor of Science (Tropical Agriculture)",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science (Tropical Agriculture).pdf",
+      "keywords": [
+        "Agriculture)",
+        "(Tropical",
+        "เกษตรเขตร้อน",
+        "farming",
+        "agriculture"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "AGR-010",
+      "faculty": "คณะเกษตร",
+      "faculty_en": "Faculty of Agriculture",
+      "program": "วท.บ. เกษตรเขตร้อน (นานาชาติ)",
+      "program_en": "Bachelor of Science (Tropical Agriculture) (International Program)",
+      "degree": "วท.บ.",
+      "file_path": "Agriculture/Bachelor of Science (Tropical Agriculture) (International Program).pdf",
+      "keywords": [
+        "Agriculture)",
+        "Program)",
+        "เกษตรเขตร้อน (นานาชาติ)",
+        "(Tropical",
+        "farming",
+        "(International",
+        "agriculture"
+      ],
+      "department": "Agriculture"
+    },
+    {
+      "id": "VET-011",
+      "faculty": "คณะเทคนิคการสัตวแพทย์",
+      "faculty_en": "Faculty of Veterinary Technology",
+      "program": "วท.บ. การพยาบาลสัตว์",
+      "program_en": "Bachelor of Science (Animal Nursing)",
+      "degree": "วท.บ.",
+      "file_path": "Veterinary Technology/Bachelor of Science (Animal Nursing).pdf",
+      "keywords": [
+        "nurse",
+        "การพยาบาลสัตว์",
+        "veterinary",
+        "Nursing)",
+        "(Animal",
+        "animal",
+        "nursing"
+      ],
+      "department": "Veterinary Technology"
+    },
+    {
+      "id": "VET-012",
+      "faculty": "คณะเทคนิคการสัตวแพทย์",
+      "faculty_en": "Faculty of Veterinary Technology",
+      "program": "วท.บ. เทคนิคการสัตวแพทย์",
+      "program_en": "Bachelor of Science (Veterinary Technology)",
+      "degree": "วท.บ.",
+      "file_path": "Veterinary Technology/Bachelor of Science (Veterinary Technology).pdf",
+      "keywords": [
+        "medical",
+        "veterinary",
+        "medicine",
+        "doctor",
+        "animal",
+        "เทคนิคการสัตวแพทย์",
+        "Technology)",
+        "(Veterinary"
+      ],
+      "department": "Veterinary Technology"
+    },
+    {
+      "id": "BUS-013",
+      "faculty": "คณะบริหารธุรกิจ",
+      "faculty_en": "Faculty of Business Administration",
+      "program": "บช.บ. บัญชี",
+      "program_en": "Bachelor of Business Administration (Accounting)",
+      "degree": "บช.บ.",
+      "file_path": "Business Administration/Bachelor of Business Administration (Accounting).pdf",
+      "keywords": [
+        "บช.บ. บัญชี",
+        "Business",
+        "Administration",
+        "(Accounting)"
+      ],
+      "department": "Business Administration"
+    },
+    {
+      "id": "BUS-014",
+      "faculty": "คณะบริหารธุรกิจ",
+      "faculty_en": "Faculty of Business Administration",
+      "program": "บธ.บ. การเงิน",
+      "program_en": "Bachelor of Business Administration (Finance)",
+      "degree": "บธ.บ.",
+      "file_path": "Business Administration/Bachelor of Business Administration (Finance).pdf",
+      "keywords": [
+        "Business",
+        "finance",
+        "accounting",
+        "money",
+        "(Finance)",
+        "การเงิน",
+        "Administration"
+      ],
+      "department": "Business Administration"
+    },
+    {
+      "id": "BUS-015",
+      "faculty": "คณะบริหารธุรกิจ",
+      "faculty_en": "Faculty of Business Administration",
+      "program": "บธ.บ. การจัดการ",
+      "program_en": "Bachelor of Business Administration (Management)",
+      "degree": "บธ.บ.",
+      "file_path": "Business Administration/Bachelor of Business Administration (Management).pdf",
+      "keywords": [
+        "(Management)",
+        "Administration",
+        "Business",
+        "การจัดการ"
+      ],
+      "department": "Business Administration"
+    },
+    {
+      "id": "BUS-016",
+      "faculty": "คณะบริหารธุรกิจ",
+      "faculty_en": "Faculty of Business Administration",
+      "program": "บธ.บ การจัดการการปฏิบัติการและเทคโนโลยี",
+      "program_en": "Bachelor of Business Administration (Operations and Technology Management)",
+      "degree": "บธ.บ",
+      "file_path": "Business Administration/Bachelor of Business Administration (Operations and Technology Management).pdf",
+      "keywords": [
+        "and",
+        "Business",
+        "(Operations",
+        "บธ.บ การจัดการการปฏิบัติการและเทคโนโลยี",
+        "Management)",
+        "Administration",
+        "Technology"
+      ],
+      "department": "Business Administration"
+    },
+    {
+      "id": "BUS-017",
+      "faculty": "คณะบริหารธุรกิจ",
+      "faculty_en": "Faculty of Business Administration",
+      "program": "บธ.บ. การตลาด",
+      "program_en": "Bachelor of Business Administration (Marketing)",
+      "degree": "บธ.บ.",
+      "file_path": "Business Administration/Bachelor of Business Administration (Marketing).pdf",
+      "keywords": [
+        "Business",
+        "การตลาด",
+        "sales",
+        "marketing",
+        "Administration",
+        "(Marketing)"
+      ],
+      "department": "Business Administration"
+    },
+    {
+      "id": "BUS-018",
+      "faculty": "คณะบริหารธุรกิจ",
+      "faculty_en": "Faculty of Business Administration",
+      "program": "บธ.บ. การตลาด (นานาชาติ)",
+      "program_en": "Bachelor of Business Administration (Marketing) (International Program)",
+      "degree": "บธ.บ.",
+      "file_path": "Business Administration/Bachelor of Business Administration (Marketing) (International Program).pdf",
+      "keywords": [
+        "Business",
+        "Program)",
+        "การตลาด (นานาชาติ)",
+        "sales",
+        "marketing",
+        "Administration",
+        "(Marketing)",
+        "(International"
+      ],
+      "department": "Business Administration"
+    },
+    {
+      "id": "BUS-019",
+      "faculty": "คณะบริหารธุรกิจ",
+      "faculty_en": "Faculty of Business Administration",
+      "program": "บธ.บ. บริหารธุรกิจ (นานาชาติ)",
+      "program_en": "Bachelor of Business Administration (Business Administration) (International Program)",
+      "degree": "บธ.บ.",
+      "file_path": "Business Administration/Bachelor of Business Administration (Business Administration) (International Program).pdf",
+      "keywords": [
+        "Administration)",
+        "business",
+        "Business",
+        "Program)",
+        "บริหารธุรกิจ (นานาชาติ)",
+        "management",
+        "administration",
+        "(Business",
+        "Administration",
+        "(International"
+      ],
+      "department": "Business Administration"
+    },
+    {
+      "id": "FISH-020",
+      "faculty": "คณะประมง",
+      "faculty_en": "Faculty of Fisheries",
+      "program": "วท.บ. ประมง",
+      "program_en": "Bachelor of Science (Fisheries)",
+      "degree": "วท.บ.",
+      "file_path": "Fisheries/Bachelor of Science (Fisheries).pdf",
+      "keywords": [
+        "(Fisheries)",
+        "ประมง"
+      ],
+      "department": "Fisheries"
+    },
+    {
+      "id": "NURS-021",
+      "faculty": "คณะพยาบาลศาสตร์",
+      "faculty_en": "Faculty of Nursing",
+      "program": "พย.บ. พยาบาลศาสตร์",
+      "program_en": "Faculty of Nursing",
+      "degree": "พย.บ.",
+      "file_path": "Nursing/Faculty of Nursing.pdf",
+      "keywords": [
+        "nurse",
+        "Faculty",
+        "พย.บ. พยาบาลศาสตร์",
+        "Nursing",
+        "nursing"
+      ],
+      "department": "Nursing"
+    },
+    {
+      "id": "MED-022",
+      "faculty": "คณะแพทยศาสตร์",
+      "faculty_en": "Faculty of Medicine",
+      "program": "พ.บ. แพทยศาสตร์",
+      "program_en": "Faculty of Medicine",
+      "degree": "พ.บ.",
+      "file_path": "Medicine/Faculty of Medicine.pdf",
+      "keywords": [
+        "พ.บ. แพทยศาสตร์",
+        "Medicine",
+        "Faculty"
+      ],
+      "department": "Medicine"
+    },
+    {
+      "id": "HUM-023",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาไทย",
+      "program_en": "Bachelor of Arts (Thai)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Thai).pdf",
+      "keywords": [
+        "ภาษาไทย",
+        "communication",
+        "(Thai)",
+        "language"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-024",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาไทยเพื่อการสื่อสารสำหรับชาวต่างประเทศ (หลักสูตรนานาชาติ)",
+      "program_en": "Bachelor of Arts (Thai for Communication for Foreigners) (International Program)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Thai for Communication for Foreigners) (International Program).pdf",
+      "keywords": [
+        "ภาษาไทยเพื่อการสื่อสารสำหรับชาวต่างประเทศ (หลักสูตรนานาชาติ)",
+        "Program)",
+        "for",
+        "communication",
+        "Communication",
+        "Foreigners)",
+        "language",
+        "(Thai",
+        "(International"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-025",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาอังกฤษ",
+      "program_en": "Bachelor of Arts (English)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (English).pdf",
+      "keywords": [
+        "ภาษาอังกฤษ",
+        "communication",
+        "language",
+        "(English)"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-026",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาตะวันตก",
+      "program_en": "Bachelor of Arts (Western Languages)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Western Languages).pdf",
+      "keywords": [
+        "Languages)",
+        "communication",
+        "language",
+        "(Western",
+        "ภาษาตะวันตก"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-027",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาฝรั่งเศส",
+      "program_en": "Bachelor of Arts (French)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (French).pdf",
+      "keywords": [
+        "communication",
+        "ภาษาฝรั่งเศส",
+        "language",
+        "(French)"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-028",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาเยอรมัน",
+      "program_en": "Bachelor of Arts (German)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (German).pdf",
+      "keywords": [
+        "communication",
+        "ภาษาเยอรมัน",
+        "language",
+        "(German)"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-029",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาญี่ปุ่นธุรกิจ",
+      "program_en": "Bachelor of Arts (Japanese for Business)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Japanese for Business).pdf",
+      "keywords": [
+        "ภาษาญี่ปุ่นธุรกิจ",
+        "for",
+        "Business)",
+        "communication",
+        "(Japanese",
+        "language"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-030",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาจีน",
+      "program_en": "Bachelor of Arts (Chinese)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Chinese).pdf",
+      "keywords": [
+        "communication",
+        "ภาษาจีน",
+        "language",
+        "(Chinese)"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-031",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาจีนธุรกิจ",
+      "program_en": "Bachelor of Arts (Chinese for Business)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Chinese for Business).pdf",
+      "keywords": [
+        "for",
+        "Business)",
+        "communication",
+        "(Chinese",
+        "language",
+        "ภาษาจีนธุรกิจ"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-032",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาตะวันออก",
+      "program_en": "Bachelor of Arts (Eastern Languages)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Eastern Languages).pdf",
+      "keywords": [
+        "Languages)",
+        "(Eastern",
+        "ภาษาตะวันออก",
+        "communication",
+        "language"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-033",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. วรรณคดี",
+      "program_en": "Bachelor of Arts (Literature)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Literature).pdf",
+      "keywords": [
+        "(Literature)",
+        "วรรณคดี"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-034",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ปรัชญาและศาสนา",
+      "program_en": "Bachelor of Arts (Philosophy and Religion)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Philosophy and Religion).pdf",
+      "keywords": [
+        "and",
+        "Religion)",
+        "(Philosophy",
+        "ปรัชญาและศาสนา"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-035",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. นิเทศศาสตร์",
+      "program_en": "Bachelor of Arts (Communication Arts)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Communication Arts).pdf",
+      "keywords": [
+        "นิเทศศาสตร์",
+        "(Communication"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-036",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. สื่อสารมวลชน",
+      "program_en": "Bachelor of Arts (Mass Communication)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Mass Communication).pdf",
+      "keywords": [
+        "สื่อสารมวลชน",
+        "(Mass",
+        "Communication)"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-037",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. นวัตกรรมการท่องเที่ยว",
+      "program_en": "Bachelor of Arts (Tourism Innovation)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Tourism Innovation).pdf",
+      "keywords": [
+        "(Tourism",
+        "tourism",
+        "hotel",
+        "นวัตกรรมการท่องเที่ยว",
+        "Innovation)",
+        "travel"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-038",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. การท่องเที่ยว",
+      "program_en": "Bachelor of Arts (Tourism)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Tourism).pdf",
+      "keywords": [
+        "tourism",
+        "hotel",
+        "การท่องเที่ยว",
+        "(Tourism)",
+        "travel"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-039",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. การเดินทางและการท่องเที่ยว",
+      "program_en": "Bachelor of Arts (Travel and Tourism)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Travel and Tourism).pdf",
+      "keywords": [
+        "(Travel",
+        "and",
+        "Tourism)",
+        "tourism",
+        "hotel",
+        "การเดินทางและการท่องเที่ยว",
+        "travel"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-040",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. การจัดการการท่องเที่ยวเชิงบูรณาการ (หลักสูตรนานาชาติ)",
+      "program_en": "Bachelor of Arts (Integrated Tourism Management) (International Program)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Integrated Tourism Management) (International Program).pdf",
+      "keywords": [
+        "Program)",
+        "Tourism",
+        "(Integrated",
+        "การจัดการการท่องเที่ยวเชิงบูรณาการ (หลักสูตรนานาชาติ)",
+        "Management)",
+        "tourism",
+        "hotel",
+        "(International",
+        "travel"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-041",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ดนตรีไทย",
+      "program_en": "Bachelor of Arts (Thai Music)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Thai Music).pdf",
+      "keywords": [
+        "Music)",
+        "(Thai",
+        "ดนตรีไทย"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-042",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ดนตรีตะวันตก",
+      "program_en": "Bachelor of Arts (Western Music)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Western Music).pdf",
+      "keywords": [
+        "ดนตรีตะวันตก",
+        "Music)",
+        "(Western"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-043",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. การโรงแรม",
+      "program_en": "Bachelor of Arts (Hotel Management)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Hotel Management).pdf",
+      "keywords": [
+        "การโรงแรม",
+        "Management)",
+        "(Hotel"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-044",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. การแปล",
+      "program_en": "Bachelor of Arts (Translation)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Translation).pdf",
+      "keywords": [
+        "การแปล",
+        "(Translation)"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-045",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. การเลขานุการ",
+      "program_en": "Bachelor of Arts (Secretarial Science)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Secretarial Science).pdf",
+      "keywords": [
+        "การเลขานุการ",
+        "(Secretarial"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-046",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. การสร้างสรรค์การบริการเพื่อธุรกิจการท่องเที่ยว",
+      "program_en": "Bachelor of Arts (Service Innovation for Tourism Business)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Service Innovation for Tourism Business).pdf",
+      "keywords": [
+        "(Service",
+        "Innovation",
+        "for",
+        "Business)",
+        "Tourism",
+        "tourism",
+        "hotel",
+        "การสร้างสรรค์การบริการเพื่อธุรกิจการท่องเที่ยว",
+        "travel"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "HUM-047",
+      "faculty": "คณะมนุษยศาสตร์",
+      "faculty_en": "Faculty of Humanities",
+      "program": "ศศ.บ. ภาษาเกาหลีธุรกิจ",
+      "program_en": "Bachelor of Arts (Korean for Business)",
+      "degree": "ศศ.บ.",
+      "file_path": "Humanities/Bachelor of Arts (Korean for Business).pdf",
+      "keywords": [
+        "for",
+        "(Korean",
+        "Business)",
+        "communication",
+        "language",
+        "ภาษาเกาหลีธุรกิจ"
+      ],
+      "department": "Humanities"
+    },
+    {
+      "id": "FOR-048",
+      "faculty": "คณะวนศาสตร์",
+      "faculty_en": "Faculty of Forestry",
+      "program": "วท.บ. วนศาสตร์",
+      "program_en": "Bachelor of Science (Forestry)",
+      "degree": "วท.บ.",
+      "file_path": "Forestry/Bachelor of Science (Forestry).pdf",
+      "keywords": [
+        "(Forestry)",
+        "วนศาสตร์"
+      ],
+      "department": "Forestry"
+    },
+    {
+      "id": "FOR-049",
+      "faculty": "คณะวนศาสตร์",
+      "faculty_en": "Faculty of Forestry",
+      "program": "วท.บ. วิทยาศาสตร์และเทคโนโลยีทางไม้",
+      "program_en": "Bachelor of Science (Wood Science and Technology)",
+      "degree": "วท.บ.",
+      "file_path": "Forestry/Bachelor of Science (Wood Science and Technology).pdf",
+      "keywords": [
+        "(Wood",
+        "and",
+        "วิทยาศาสตร์และเทคโนโลยีทางไม้",
+        "Technology)"
+      ],
+      "department": "Forestry"
+    },
+    {
+      "id": "FOR-050",
+      "faculty": "คณะวนศาสตร์",
+      "faculty_en": "Faculty of Forestry",
+      "program": "วท.บ. เทคโนโลยีเยื่อและกระดาษ",
+      "program_en": "Bachelor of Science (Pulp and Paper Technology)",
+      "degree": "วท.บ.",
+      "file_path": "Forestry/Bachelor of Science (Pulp and Paper Technology).pdf",
+      "keywords": [
+        "and",
+        "(Pulp",
+        "Paper",
+        "Technology)",
+        "เทคโนโลยีเยื่อและกระดาษ"
+      ],
+      "department": "Forestry"
+    },
+    {
+      "id": "FOR-051",
+      "faculty": "คณะวนศาสตร์",
+      "faculty_en": "Faculty of Forestry",
+      "program": "วท.บ. เทคโนโลยีผลิตภัณฑ์ไม้และกระดาษ",
+      "program_en": "Bachelor of Science (Wood and Paper Product Technology)",
+      "degree": "วท.บ.",
+      "file_path": "Forestry/Bachelor of Science (Wood and Paper Product Technology).pdf",
+      "keywords": [
+        "and",
+        "เทคโนโลยีผลิตภัณฑ์ไม้และกระดาษ",
+        "(Wood",
+        "Paper",
+        "Technology)",
+        "Product"
+      ],
+      "department": "Forestry"
+    },
+    {
+      "id": "SCI-052",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. ฟิสิกส์",
+      "program_en": "Bachelor of Science (Physics)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Physics).pdf",
+      "keywords": [
+        "(Physics)",
+        "ฟิสิกส์"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-053",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. คณิตศาสตร์",
+      "program_en": "Bachelor of Science (Mathematics)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Mathematics).pdf",
+      "keywords": [
+        "คณิตศาสตร์",
+        "(Mathematics)"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-054",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. สถิติ",
+      "program_en": "Bachelor of Science (Statistics)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Statistics).pdf",
+      "keywords": [
+        "สถิติ",
+        "(Statistics)"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-055",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. วิทยาการคอมพิวเตอร์",
+      "program_en": "Bachelor of Science (Computer Science)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Computer Science).pdf",
+      "keywords": [
+        "(Computer",
+        "coding",
+        "software",
+        "computer",
+        "IT",
+        "วิทยาการคอมพิวเตอร์",
+        "programming"
+      ],
+      "department": "Science",
+      "related_programs": [
+        "ENG-080"
+      ]
+    },
+    {
+      "id": "SCI-056",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. เคมี",
+      "program_en": "Bachelor of Science (Chemistry)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Chemistry).pdf",
+      "keywords": [
+        "(Chemistry)",
+        "เคมี"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-057",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. ชีวเคมี",
+      "program_en": "Bachelor of Science (Biochemistry)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Biochemistry).pdf",
+      "keywords": [
+        "ชีวเคมี",
+        "(Biochemistry)"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-058",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. เคมีอุตสาหกรรม",
+      "program_en": "Bachelor of Science (Industrial Chemistry)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Industrial Chemistry).pdf",
+      "keywords": [
+        "(Industrial",
+        "เคมีอุตสาหกรรม",
+        "Chemistry)"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-059",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. ชีววิทยา",
+      "program_en": "Bachelor of Science (Biology)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Biology).pdf",
+      "keywords": [
+        "(Biology)",
+        "ชีววิทยา"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-060",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. จุลชีววิทยา",
+      "program_en": "Bachelor of Science (Microbiology)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Microbiology).pdf",
+      "keywords": [
+        "จุลชีววิทยา",
+        "(Microbiology)"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-061",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. วิทยาศาสตร์ชีวภาพรังสี",
+      "program_en": "Bachelor of Science (Radiobiological Science)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Radiobiological Science).pdf",
+      "keywords": [
+        "(Radiobiological",
+        "วิทยาศาสตร์ชีวภาพรังสี"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-062",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. วิทยาศาสตร์นิวเคลียร์",
+      "program_en": "Bachelor of Science (Nuclear Science)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Nuclear Science).pdf",
+      "keywords": [
+        "วิทยาศาสตร์นิวเคลียร์",
+        "(Nuclear"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-063",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. วิทยาศาสตร์สิ่งแวดล้อม",
+      "program_en": "Bachelor of Science (Environmental Science)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Environmental Science).pdf",
+      "keywords": [
+        "(Environmental",
+        "วิทยาศาสตร์สิ่งแวดล้อม"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-064",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. พฤกษศาสตร์",
+      "program_en": "Bachelor of Science (Botany)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Botany).pdf",
+      "keywords": [
+        "พฤกษศาสตร์",
+        "(Botany)"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-065",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. พันธุศาสตร์",
+      "program_en": "Bachelor of Science (Genetics)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Genetics).pdf",
+      "keywords": [
+        "(Genetics)",
+        "พันธุศาสตร์"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-066",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. วิทยาศาสตร์พื้นพิภพ",
+      "program_en": "Bachelor of Science (Earth Science)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Earth Science).pdf",
+      "keywords": [
+        "วิทยาศาสตร์พื้นพิภพ",
+        "(Earth"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-067",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. เคมีบูรณาการ (นานาชาติ)",
+      "program_en": "Bachelor of Science (Integrated Chemistry) (International Program)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Integrated Chemistry) (International Program).pdf",
+      "keywords": [
+        "Program)",
+        "(Integrated",
+        "เคมีบูรณาการ (นานาชาติ)",
+        "Chemistry)",
+        "(International"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-068",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. วิทยาศาสตร์ชีวภาพและเทคโนโลยี (นานาชาติ)",
+      "program_en": "Bachelor of Science (Bioscience and Technology) (International Program)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Bioscience and Technology) (International Program).pdf",
+      "keywords": [
+        "and",
+        "วิทยาศาสตร์ชีวภาพและเทคโนโลยี (นานาชาติ)",
+        "Program)",
+        "(Bioscience",
+        "Technology)",
+        "(International"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "SCI-069",
+      "faculty": "คณะวิทยาศาสตร์",
+      "faculty_en": "Faculty of Science",
+      "program": "วท.บ. วิทยาการและเทคโนโลยีพอลิเมอร์ (นานาชาติ)",
+      "program_en": "Bachelor of Science (Polymer Science and Technology) (International Program)",
+      "degree": "วท.บ.",
+      "file_path": "Science/Bachelor of Science (Polymer Science and Technology) (International Program).pdf",
+      "keywords": [
+        "and",
+        "Program)",
+        "วิทยาการและเทคโนโลยีพอลิเมอร์ (นานาชาติ)",
+        "Technology)",
+        "(Polymer",
+        "(International"
+      ],
+      "department": "Science"
+    },
+    {
+      "id": "ENG-070",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมเครื่องกล",
+      "program_en": "Bachelor of Engineering (Mechanical Engineering)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering (Mechanical Engineering).pdf",
+      "keywords": [
+        "วศ.บ. วิศวกรรมเครื่องกล",
+        "engineering",
+        "engineer",
+        "Engineering",
+        "Engineering)",
+        "(Mechanical"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-071",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมเครื่องกล (นานาชาติ)",
+      "program_en": "Bachelor of Engineering (Mechanical Engineering) (International Program)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering (Mechanical Engineering) (International Program).pdf",
+      "keywords": [
+        "Program)",
+        "engineering",
+        "วศ.บ. วิศวกรรมเครื่องกล (นานาชาติ)",
+        "engineer",
+        "Engineering",
+        "(Mechanical",
+        "Engineering)",
+        "(International"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-072",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมไฟฟ้า",
+      "program_en": "Bachelor of Engineering (Electrical Engineering)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering (Electrical Engineering).pdf",
+      "keywords": [
+        "วศ.บ. วิศวกรรมไฟฟ้า",
+        "engineering",
+        "engineer",
+        "(Electrical",
+        "Engineering",
+        "Engineering)"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-073",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมไฟฟ้าเครื่องกลการผลิต",
+      "program_en": "Bachelor of Engineering (Electromechanical and Manufacturing Engineering)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering (Electromechanical and Manufacturing Engineering).pdf",
+      "keywords": [
+        "Manufacturing",
+        "and",
+        "engineering",
+        "วศ.บ. วิศวกรรมไฟฟ้าเครื่องกลการผลิต",
+        "engineer",
+        "Engineering",
+        "(Electromechanical",
+        "Engineering)"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-074",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมไฟฟ้าเครื่องกลการผลิต (นานาชาติ)",
+      "program_en": "Bachelor of Engineering in Electrical–Mechanical Manufacturing Engineering (International Program)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Electrical–Mechanical Manufacturing Engineering (International Program).pdf",
+      "keywords": [
+        "Manufacturing",
+        "Program)",
+        "Electrical–Mechanical",
+        "engineering",
+        "วศ.บ. วิศวกรรมไฟฟ้าเครื่องกลการผลิต (นานาชาติ)",
+        "engineer",
+        "Engineering",
+        "(International"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-075",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมโยธา",
+      "program_en": "Bachelor of Engineering in Civil Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Civil Engineering.pdf",
+      "keywords": [
+        "engineering",
+        "Civil",
+        "วศ.บ. วิศวกรรมโยธา",
+        "engineer",
+        "Engineering"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-076",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมโยธา-ทรัพยากรน้ำ",
+      "program_en": "Bachelor of Engineering in Civil and Water Resources Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Civil and Water Resources Engineering.pdf",
+      "keywords": [
+        "and",
+        "Water",
+        "engineering",
+        "Resources",
+        "Civil",
+        "engineer",
+        "Engineering",
+        "วศ.บ. วิศวกรรมโยธา-ทรัพยากรน้ำ"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-077",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมอุตสาหการ",
+      "program_en": "Bachelor of Engineering in Industrial Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Industrial Engineering.pdf",
+      "keywords": [
+        "engineering",
+        "Industrial",
+        "engineer",
+        "Engineering",
+        "วศ.บ. วิศวกรรมอุตสาหการ"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-078",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมเคมี",
+      "program_en": "Bachelor of Engineering in Chemical Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Chemical Engineering.pdf",
+      "keywords": [
+        "วศ.บ. วิศวกรรมเคมี",
+        "engineering",
+        "Chemical",
+        "engineer",
+        "Engineering"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-079",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมสิ่งแวดล้อม",
+      "program_en": "Bachelor of Engineering in Environmental Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Environmental Engineering.pdf",
+      "keywords": [
+        "Environmental",
+        "engineering",
+        "engineer",
+        "วศ.บ. วิศวกรรมสิ่งแวดล้อม",
+        "Engineering"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-080",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมคอมพิวเตอร์",
+      "program_en": "Bachelor of Engineering in Computer Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Computer Engineering.pdf",
+      "keywords": [
+        "Computer",
+        "engineering",
+        "coding",
+        "วศ.บ. วิศวกรรมคอมพิวเตอร์",
+        "software",
+        "computer",
+        "IT",
+        "engineer",
+        "Engineering",
+        "programming"
+      ],
+      "department": "Engineering",
+      "related_programs": [
+        "SCI-055"
+      ]
+    },
+    {
+      "id": "ENG-081",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมซอฟต์แวร์และความรู้ (นานาชาติ)",
+      "program_en": "Bachelor of Engineering in Software and Knowledge Engineering (International Program)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Software and Knowledge Engineering (International Program).pdf",
+      "keywords": [
+        "and",
+        "Program)",
+        "engineering",
+        "วศ.บ. วิศวกรรมซอฟต์แวร์และความรู้ (นานาชาติ)",
+        "Knowledge",
+        "Software",
+        "engineer",
+        "Engineering",
+        "(International"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-082",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมการผลิตดิจิทัลและการบูรณาการหุ่นยนต์ (นานาชาติ)",
+      "program_en": "Bachelor of Engineering in Digital Manufacturing and Robotics Integration (International Program)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Digital Manufacturing and Robotics Integration (International Program).pdf",
+      "keywords": [
+        "Manufacturing",
+        "and",
+        "Digital",
+        "Program)",
+        "engineering",
+        "วศ.บ. วิศวกรรมการผลิตดิจิทัลและการบูรณาการหุ่นยนต์ (นานาชาติ)",
+        "Robotics",
+        "engineer",
+        "Engineering",
+        "Integration",
+        "(International"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-083",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมวัสดุ",
+      "program_en": "Bachelor of Engineering in Materials Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Materials Engineering.pdf",
+      "keywords": [
+        "Materials",
+        "engineering",
+        "engineer",
+        "วศ.บ. วิศวกรรมวัสดุ",
+        "Engineering"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-084",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมการบินและอวกาศ",
+      "program_en": "Bachelor of Engineering in Aeronautical and Aerospace Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Aeronautical and Aerospace Engineering.pdf",
+      "keywords": [
+        "and",
+        "engineering",
+        "Aeronautical",
+        "วศ.บ. วิศวกรรมการบินและอวกาศ",
+        "Aerospace",
+        "engineer",
+        "Engineering"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-085",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วท.บ. การจัดการเทคโนโลยีการบิน",
+      "program_en": "Bachelor of Science in Aviation Technology Management",
+      "degree": "วท.บ.",
+      "file_path": "Engineering/Bachelor of Science in Aviation Technology Management.pdf",
+      "keywords": [
+        "Management",
+        "Aviation",
+        "Technology",
+        "การจัดการเทคโนโลยีการบิน"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-086",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมสำรวจและสารสนเทศภูมิศาสตร์",
+      "program_en": "Bachelor of Engineering in Surveying and Geoinformatics Engineering",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Surveying and Geoinformatics Engineering.pdf",
+      "keywords": [
+        "and",
+        "engineering",
+        "วศ.บ. วิศวกรรมสำรวจและสารสนเทศภูมิศาสตร์",
+        "engineer",
+        "Engineering",
+        "Geoinformatics",
+        "Surveying"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "ENG-087",
+      "faculty": "คณะวิศวกรรมศาสตร์",
+      "faculty_en": "Faculty of Engineering",
+      "program": "วศ.บ. วิศวกรรมเซมิคอนดักเตอร์ (Sandbox)",
+      "program_en": "Bachelor of Engineering in Semiconductor Engineering (Sandbox Program)",
+      "degree": "วศ.บ.",
+      "file_path": "Engineering/Bachelor of Engineering in Semiconductor Engineering (Sandbox Program).pdf",
+      "keywords": [
+        "วศ.บ. วิศวกรรมเซมิคอนดักเตอร์ (Sandbox)",
+        "Program)",
+        "engineering",
+        "Semiconductor",
+        "(Sandbox",
+        "engineer",
+        "Engineering"
+      ],
+      "department": "Engineering"
+    },
+    {
+      "id": "EDU-088",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. ศึกษาศาสตร์ (4 ปี)",
+      "program_en": "Bachelor of Education in Education (4-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Education (4-Year Program).pdf",
+      "keywords": [
+        "education",
+        "Program)",
+        "Education",
+        "(4-Year",
+        "ศษ.บ. ศึกษาศาสตร์ (4 ปี)",
+        "teaching"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "EDU-089",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. การสอนคณิตศาสตร์ (5 ปี)",
+      "program_en": "Bachelor of Education in Mathematics Education (5-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Mathematics Education (5-Year Program).pdf",
+      "keywords": [
+        "(5-Year",
+        "ศษ.บ. การสอนคณิตศาสตร์ (5 ปี)",
+        "Mathematics",
+        "Program)",
+        "Education"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "EDU-090",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. การสอนวิทยาศาสตร์ (5 ปี)",
+      "program_en": "Bachelor of Education in Science Education (5-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Science Education (5-Year Program).pdf",
+      "keywords": [
+        "(5-Year",
+        "ศษ.บ. การสอนวิทยาศาสตร์ (5 ปี)",
+        "Program)",
+        "Education"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "EDU-091",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. คหกรรมศาสตรศึกษา (5 ปี)",
+      "program_en": "Bachelor of Education in Home Economics Education (5-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Home Economics Education (5-Year Program).pdf",
+      "keywords": [
+        "Home",
+        "(5-Year",
+        "ศษ.บ. คหกรรมศาสตรศึกษา (5 ปี)",
+        "Program)",
+        "education",
+        "Education",
+        "teaching",
+        "Economics"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "EDU-092",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. ธุรกิจและคอมพิวเตอร์ศึกษา (5 ปี)",
+      "program_en": "Bachelor of Education in Business and Computer Education (5-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Business and Computer Education (5-Year Program).pdf",
+      "keywords": [
+        "ศษ.บ. ธุรกิจและคอมพิวเตอร์ศึกษา (5 ปี)",
+        "and",
+        "(5-Year",
+        "Business",
+        "Program)",
+        "programming",
+        "Education",
+        "education",
+        "coding",
+        "software",
+        "computer",
+        "IT",
+        "teaching",
+        "Computer"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "EDU-093",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. สุขศึกษา (4 ปี)",
+      "program_en": "Bachelor of Education in Health Education (4-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Health Education (4-Year Program).pdf",
+      "keywords": [
+        "Health",
+        "Program)",
+        "education",
+        "Education",
+        "(4-Year",
+        "ศษ.บ. สุขศึกษา (4 ปี)",
+        "teaching"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "EDU-094",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. พลศึกษา (4 ปี)",
+      "program_en": "Bachelor of Education in Physical Education (4-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Physical Education (4-Year Program).pdf",
+      "keywords": [
+        "Program)",
+        "education",
+        "Education",
+        "ศษ.บ. พลศึกษา (4 ปี)",
+        "(4-Year",
+        "Physical",
+        "teaching"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "EDU-095",
+      "faculty": "คณะศึกษาศาสตร์",
+      "faculty_en": "Faculty of Education",
+      "program": "ศษ.บ. พลศึกษา (5 ปี)",
+      "program_en": "Bachelor of Education in Physical Education (5-Year Program)",
+      "degree": "ศษ.บ.",
+      "file_path": "Education/Bachelor of Education in Physical Education (5-Year Program)pdf.pdf",
+      "keywords": [
+        "(5-Year",
+        "Program)",
+        "education",
+        "Education",
+        "ศษ.บ. พลศึกษา (5 ปี)",
+        "Physical",
+        "teaching"
+      ],
+      "department": "Education"
+    },
+    {
+      "id": "ECON-096",
+      "faculty": "คณะเศรษฐศาสตร์",
+      "faculty_en": "Faculty of Economics",
+      "program": "ศ.บ. เศรษฐศาสตร์",
+      "program_en": "Bachelor of Arts in Economics",
+      "degree": "ศ.บ.",
+      "file_path": "Economics/Bachelor of Arts in Economics.pdf",
+      "keywords": [
+        "economics",
+        "ศ.บ. เศรษฐศาสตร์",
+        "Economics",
+        "economy"
+      ],
+      "department": "Economics"
+    },
+    {
+      "id": "ECON-097",
+      "faculty": "คณะเศรษฐศาสตร์",
+      "faculty_en": "Faculty of Economics",
+      "program": "วท.บ. ธุรกิจการเกษตร",
+      "program_en": "Bachelor of Science in Agricultural Business",
+      "degree": "วท.บ.",
+      "file_path": "Economics/Bachelor of Science in Agricultural Business.pdf",
+      "keywords": [
+        "ธุรกิจการเกษตร",
+        "Business",
+        "farming",
+        "Agricultural",
+        "agriculture"
+      ],
+      "department": "Economics"
+    },
+    {
+      "id": "ECON-098",
+      "faculty": "คณะเศรษฐศาสตร์",
+      "faculty_en": "Faculty of Economics",
+      "program": "วท.บ. เศรษฐศาสตร์เกษตรและทรัพยากร",
+      "program_en": "Bachelor of Science in Agricultural and Resource Economics",
+      "degree": "วท.บ.",
+      "file_path": "Economics/Bachelor of Science in Agricultural and Resource Economics.pdf",
+      "keywords": [
+        "and",
+        "economics",
+        "Resource",
+        "Agricultural",
+        "farming",
+        "economy",
+        "เศรษฐศาสตร์เกษตรและทรัพยากร",
+        "Economics",
+        "agriculture"
+      ],
+      "department": "Economics"
+    },
+    {
+      "id": "ECON-099",
+      "faculty": "คณะเศรษฐศาสตร์",
+      "faculty_en": "Faculty of Economics",
+      "program": "วท.บ. เศรษฐศาสตร์เกษตร",
+      "program_en": "Bachelor of Science in Agricultural Economics",
+      "degree": "วท.บ.",
+      "file_path": "Economics/Bachelor of Science in Agricultural Economics.pdf",
+      "keywords": [
+        "เศรษฐศาสตร์เกษตร",
+        "economics",
+        "Agricultural",
+        "farming",
+        "economy",
+        "Economics",
+        "agriculture"
+      ],
+      "department": "Economics"
+    },
+    {
+      "id": "ECON-100",
+      "faculty": "คณะเศรษฐศาสตร์",
+      "faculty_en": "Faculty of Economics",
+      "program": "ศ.บ. เศรษฐศาสตร์สหกรณ์",
+      "program_en": "Bachelor of Arts in Cooperative Economics",
+      "degree": "ศ.บ.",
+      "file_path": "Economics/Bachelor of Arts in Cooperative Economics.pdf",
+      "keywords": [
+        "economics",
+        "Cooperative",
+        "economy",
+        "ศ.บ. เศรษฐศาสตร์สหกรณ์",
+        "Economics"
+      ],
+      "department": "Economics"
+    },
+    {
+      "id": "ECON-101",
+      "faculty": "คณะเศรษฐศาสตร์",
+      "faculty_en": "Faculty of Economics",
+      "program": "ศศ.บ. เศรษฐศาสตร์การประกอบการ (นานาชาติ)",
+      "program_en": "Bachelor of Arts in Entrepreneurial Economics (International Program)",
+      "degree": "ศศ.บ.",
+      "file_path": "Economics/Bachelor of Arts in Entrepreneurial Economics (International Program).pdf",
+      "keywords": [
+        "เศรษฐศาสตร์การประกอบการ (นานาชาติ)",
+        "economics",
+        "Program)",
+        "Economics",
+        "Entrepreneurial",
+        "economy",
+        "(International"
+      ],
+      "department": "Economics"
+    },
+    {
+      "id": "ECON-102",
+      "faculty": "คณะเศรษฐศาสตร์",
+      "faculty_en": "Faculty of Economics",
+      "program": "ศ.บ. เศรษฐศาสตร์ประยุกต์และธุรกิจเกษตร",
+      "program_en": "Bachelor of Arts in Applied Economics and Agricultural Business",
+      "degree": "ศ.บ.",
+      "file_path": "Economics/Bachelor of Arts in Applied Economics and Agricultural Business.pdf",
+      "keywords": [
+        "and",
+        "Business",
+        "economics",
+        "ศ.บ. เศรษฐศาสตร์ประยุกต์และธุรกิจเกษตร",
+        "Applied",
+        "Agricultural",
+        "farming",
+        "economy",
+        "Economics",
+        "agriculture"
+      ],
+      "department": "Economics"
+    },
+    {
+      "id": "ARCH-103",
+      "faculty": "คณะสถาปัตยกรรมศาสตร์",
+      "faculty_en": "Faculty of Architecture",
+      "program": "สถ.บ. สถาปัตยกรรมศาสตรบัณฑิต",
+      "program_en": "Bachelor of Architecture",
+      "degree": "สถ.บ.",
+      "file_path": "Architecture/Bachelor of Architecture.pdf",
+      "keywords": [
+        "สถ.บ. สถาปัตยกรรมศาสตรบัณฑิต",
+        "design",
+        "architecture",
+        "Architecture"
+      ],
+      "department": "Architecture"
+    },
+    {
+      "id": "ARCH-104",
+      "faculty": "คณะสถาปัตยกรรมศาสตร์",
+      "faculty_en": "Faculty of Architecture",
+      "program": "ภ.สถ.บ. ภูมิสถาปัตยกรรมศาสตรบัณฑิต",
+      "program_en": "Bachelor of Landscape Architecture",
+      "degree": "ภ.สถ.บ.",
+      "file_path": "Architecture/Bachelor of Landscape Architecture.pdf",
+      "keywords": [
+        "ภ.สถ.บ. ภูมิสถาปัตยกรรมศาสตรบัณฑิต",
+        "architecture",
+        "Landscape",
+        "Architecture",
+        "design"
+      ],
+      "department": "Architecture"
+    },
+    {
+      "id": "ARCH-105",
+      "faculty": "คณะสถาปัตยกรรมศาสตร์",
+      "faculty_en": "Faculty of Architecture",
+      "program": "วท.บ. นวัตกรรมการออกแบบผลิตภัณฑ์เชิงบูรณาการ",
+      "program_en": "Bachelor of Science in Integrated Product Design Innovation",
+      "degree": "วท.บ.",
+      "file_path": "Architecture/Bachelor of Science in Integrated Product Design Innovation.pdf",
+      "keywords": [
+        "Innovation",
+        "Design",
+        "Integrated",
+        "นวัตกรรมการออกแบบผลิตภัณฑ์เชิงบูรณาการ",
+        "Product"
+      ],
+      "department": "Architecture"
+    },
+    {
+      "id": "ARCH-106",
+      "faculty": "คณะสถาปัตยกรรมศาสตร์",
+      "faculty_en": "Faculty of Architecture",
+      "program": "วท.บ. สถาปัตยกรรม",
+      "program_en": "Bachelor of Science in Architecture",
+      "degree": "วท.บ.",
+      "file_path": "Architecture/Bachelor of Science in Architecture.pdf",
+      "keywords": [
+        "design",
+        "architecture",
+        "สถาปัตยกรรม",
+        "Architecture"
+      ],
+      "department": "Architecture"
+    },
+    {
+      "id": "IMT-107",
+      "faculty": "คณะสหวิทยาการจัดการและเทคโนโลยี",
+      "faculty_en": "Faculty of Interdisciplinary Management and Technology",
+      "program": "บธ.บ. การจัดการท่องเที่ยวเชิงวัฒนธรรมและสุขภาพ",
+      "program_en": "Bachelor of Business Administration in Cultural and Health Tourism Management",
+      "degree": "บธ.บ.",
+      "file_path": "Interdisciplinary Management and Technology/Bachelor of Business Administration in Cultural and Health Tourism Management.pdf",
+      "keywords": [
+        "Health",
+        "and",
+        "Business",
+        "Management",
+        "Tourism",
+        "tourism",
+        "Administration",
+        "hotel",
+        "travel",
+        "Cultural",
+        "การจัดการท่องเที่ยวเชิงวัฒนธรรมและสุขภาพ"
+      ],
+      "department": "Interdisciplinary Management and Technology"
+    },
+    {
+      "id": "IMT-108",
+      "faculty": "คณะสหวิทยาการจัดการและเทคโนโลยี",
+      "faculty_en": "Faculty of Interdisciplinary Management and Technology",
+      "program": "บธ.บ. การจัดการอุตสาหกรรมบริการ",
+      "program_en": "Bachelor of Business Administration in Service Industry Management",
+      "degree": "บธ.บ.",
+      "file_path": "Interdisciplinary Management and Technology/Bachelor of Business Administration in Service Industry Management.pdf",
+      "keywords": [
+        "Business",
+        "Industry",
+        "การจัดการอุตสาหกรรมบริการ",
+        "Service",
+        "Management",
+        "Administration"
+      ],
+      "department": "Interdisciplinary Management and Technology"
+    },
+    {
+      "id": "SOC-109",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "ศศ.บ. ประวัติศาสตร์",
+      "program_en": "Bachelor of Arts in History",
+      "degree": "ศศ.บ.",
+      "file_path": "Social Sciences/Bachelor of Arts in History.pdf",
+      "keywords": [
+        "History",
+        "ประวัติศาสตร์"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "SOC-110",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "วท.บ. ภูมิศาสตร์และภูมิสารสนเทศศาสตร์",
+      "program_en": "Bachelor of Science in Geography and Geoinformatics",
+      "degree": "วท.บ.",
+      "file_path": "Social Sciences/Bachelor of Science in Geography and Geoinformatics.pdf",
+      "keywords": [
+        "Geoinformatics",
+        "ภูมิศาสตร์และภูมิสารสนเทศศาสตร์",
+        "and",
+        "Geography"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "SOC-111",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "ศศ.บ. เอเชียตะวันออก",
+      "program_en": "Bachelor of Arts in East Asian Studies",
+      "degree": "ศศ.บ.",
+      "file_path": "Social Sciences/Bachelor of Arts in East Asian Studies.pdf",
+      "keywords": [
+        "Asian",
+        "East",
+        "เอเชียตะวันออก",
+        "Studies"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "SOC-112",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "ศศ.บ. สังคมวิทยาและมานุษยวิทยา",
+      "program_en": "Bachelor of Arts in Sociology and Anthropology",
+      "degree": "ศศ.บ.",
+      "file_path": "Social Sciences/Bachelor of Arts in Sociology and Anthropology.pdf",
+      "keywords": [
+        "Anthropology",
+        "and",
+        "Sociology",
+        "สังคมวิทยาและมานุษยวิทยา"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "SOC-113",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "วท.บ. จิตวิทยา",
+      "program_en": "Bachelor of Science in Psychology",
+      "degree": "วท.บ.",
+      "file_path": "Social Sciences/Bachelor of Science in Psychology.pdf",
+      "keywords": [
+        "จิตวิทยา",
+        "Psychology"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "SOC-114",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "น.บ. นิติศาสตร์",
+      "program_en": "Bachelor of Laws",
+      "degree": "น.บ.",
+      "file_path": "Social Sciences/Bachelor of Laws.pdf",
+      "keywords": [
+        "Laws",
+        "น.บ. นิติศาสตร์"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "SOC-115",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "ศศ.บ. รัฐศาสตร์",
+      "program_en": "Bachelor of Arts in Political Science",
+      "degree": "ศศ.บ.",
+      "file_path": "Social Sciences/Bachelor of Arts in Political Science.pdf",
+      "keywords": [
+        "รัฐศาสตร์",
+        "Political"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "SOC-116",
+      "faculty": "คณะสังคมศาสตร์",
+      "faculty_en": "Faculty of Social Sciences",
+      "program": "ศศ.บ. รัฐประศาสนศาสตร์",
+      "program_en": "Bachelor of Arts in Public Administration",
+      "degree": "ศศ.บ.",
+      "file_path": "Social Sciences/Bachelor of Arts in Public Administration.pdf",
+      "keywords": [
+        "รัฐประศาสนศาสตร์",
+        "Public",
+        "Administration"
+      ],
+      "department": "Social Sciences"
+    },
+    {
+      "id": "VM-117",
+      "faculty": "คณะสัตวแพทยศาสตร์",
+      "faculty_en": "Faculty of Veterinary Medicine",
+      "program": "สพ.บ. สัตวแพทยศาสตร์",
+      "program_en": "Bachelor of Veterinary Science",
+      "degree": "สพ.บ.",
+      "file_path": "Veterinary Medicine/Bachelor of Veterinary Science.pdf",
+      "keywords": [
+        "veterinary",
+        "Veterinary",
+        "สพ.บ. สัตวแพทยศาสตร์",
+        "animal"
+      ],
+      "department": "Veterinary Medicine"
+    },
+    {
+      "id": "VM-118",
+      "faculty": "คณะสัตวแพทยศาสตร์",
+      "faculty_en": "Faculty of Veterinary Medicine",
+      "program": "วท.บ. วิทยาศาสตร์การสัตวแพทย์",
+      "program_en": "Bachelor of Science in Veterinary Science",
+      "degree": "วท.บ.",
+      "file_path": "Veterinary Medicine/Bachelor of Science in Veterinary Science.pdf",
+      "keywords": [
+        "Veterinary",
+        "วิทยาศาสตร์การสัตวแพทย์",
+        "medical",
+        "veterinary",
+        "medicine",
+        "doctor",
+        "animal"
+      ],
+      "department": "Veterinary Medicine"
+    },
+    {
+      "id": "ENV-119",
+      "faculty": "คณะสิ่งแวดล้อม",
+      "faculty_en": "Faculty of Environment",
+      "program": "วท.บ. วิทยาศาสตร์และเทคโนโลยีสิ่งแวดล้อม (แบบแยก)",
+      "program_en": "Bachelor of Science in Environmental Science and Technology",
+      "degree": "วท.บ.",
+      "file_path": "Environment/Bachelor of Science in Environmental Science and Technology.pdf",
+      "keywords": [
+        "and",
+        "Environmental",
+        "วิทยาศาสตร์และเทคโนโลยีสิ่งแวดล้อม (แบบแยก)",
+        "Technology"
+      ],
+      "department": "Environment"
+    },
+    {
+      "id": "ENV-120",
+      "faculty": "คณะสิ่งแวดล้อม",
+      "faculty_en": "Faculty of Environment",
+      "program": "วท.บ. วิทยาศาสตร์สิ่งแวดล้อม",
+      "program_en": "Bachelor of Science in Environmental Science",
+      "degree": "วท.บ.",
+      "file_path": "Environment/Bachelor of Science in Environmental Science.pdf",
+      "keywords": [
+        "วิทยาศาสตร์สิ่งแวดล้อม",
+        "Environmental"
+      ],
+      "department": "Environment"
+    },
+    {
+      "id": "ENV-121",
+      "faculty": "คณะสิ่งแวดล้อม",
+      "faculty_en": "Faculty of Environment",
+      "program": "วท.บ. การจัดการสิ่งแวดล้อม (แบบแยก)",
+      "program_en": "Bachelor of Science in Environmental Management",
+      "degree": "วท.บ.",
+      "file_path": "Environment/Bachelor of Science in Environmental Management.pdf",
+      "keywords": [
+        "Management",
+        "Environmental",
+        "การจัดการสิ่งแวดล้อม (แบบแยก)"
+      ],
+      "department": "Environment"
+    },
+    {
+      "id": "AGRO-122",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. เทคโนโลยีชีวภาพ",
+      "program_en": "Bachelor of Science in Biotechnology",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Biotechnology.pdf",
+      "keywords": [
+        "Biotechnology",
+        "เทคโนโลยีชีวภาพ"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "AGRO-123",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. วิศวกรรมอาหาร",
+      "program_en": "Bachelor of Science in Food Engineering",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Food Engineering.pdf",
+      "keywords": [
+        "engineering",
+        "วิศวกรรมอาหาร",
+        "engineer",
+        "Engineering",
+        "Food"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "AGRO-124",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. เทคโนโลยีการบรรจุ",
+      "program_en": "Bachelor of Science in Packaging Technology",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Packaging Technology.pdf",
+      "keywords": [
+        "Packaging",
+        "Technology",
+        "เทคโนโลยีการบรรจุ"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "AGRO-125",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. วิทยาศาสตร์และเทคโนโลยีการอาหาร",
+      "program_en": "Bachelor of Science in Food Science and Technology",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Food Science and Technology.pdf",
+      "keywords": [
+        "and",
+        "Technology",
+        "วิทยาศาสตร์และเทคโนโลยีการอาหาร",
+        "Food"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "AGRO-126",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. พัฒนาผลิตภัณฑ์อุตสาหกรรมเกษตร",
+      "program_en": "Bachelor of Science in Agro-Industrial Product Development",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Agro-Industrial Product Development.pdf",
+      "keywords": [
+        "Agro-Industrial",
+        "Development",
+        "พัฒนาผลิตภัณฑ์อุตสาหกรรมเกษตร",
+        "farming",
+        "Product",
+        "agriculture"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "AGRO-127",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. เทคโนโลยีสิ่งทอและแฟชั่น",
+      "program_en": "Bachelor of Science in Textile and Fashion Technology",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Textile and Fashion Technology.pdf",
+      "keywords": [
+        "Fashion",
+        "เทคโนโลยีสิ่งทอและแฟชั่น",
+        "and",
+        "Textile",
+        "Technology"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "AGRO-128",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. วิทยาศาสตร์และเทคโนโลยีสิ่งทอ",
+      "program_en": "Bachelor of Science in Textile Science and Technology",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Textile Science and Technology.pdf",
+      "keywords": [
+        "Textile",
+        "and",
+        "Technology",
+        "วิทยาศาสตร์และเทคโนโลยีสิ่งทอ"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "AGRO-129",
+      "faculty": "คณะอุตสาหกรรมเกษตร",
+      "faculty_en": "Faculty of Agro-Industry",
+      "program": "วท.บ. นวัตกรรมและเทคโนโลยีอุตสาหกรรมเกษตร (นานาชาติ)",
+      "program_en": "Bachelor of Science in Agro-Industrial Innovation and Technology (International Program)",
+      "degree": "วท.บ.",
+      "file_path": "Agro-Industry/Bachelor of Science in Agro-Industrial Innovation and Technology (International Program).pdf",
+      "keywords": [
+        "Innovation",
+        "and",
+        "Program)",
+        "Agro-Industrial",
+        "(International",
+        "farming",
+        "นวัตกรรมและเทคโนโลยีอุตสาหกรรมเกษตร (นานาชาติ)",
+        "Technology",
+        "agriculture"
+      ],
+      "department": "Agro-Industry"
+    },
+    {
+      "id": "PHARM-130",
+      "faculty": "คณะเภสัชศาสตร์",
+      "faculty_en": "Faculty of Pharmacy",
+      "program": "ภ.บ. เภสัชศาสตร์",
+      "program_en": "Bachelor of Pharmacy",
+      "degree": "ภ.บ.",
+      "file_path": "Pharmacy/Bachelor of Pharmacy.pdf",
+      "keywords": [
+        "Pharmacy",
+        "pharmacist",
+        "ภ.บ. เภสัชศาสตร์",
+        "pharmacy"
+      ],
+      "department": "Pharmacy"
+    },
+    {
+      "id": "CIS-131",
+      "faculty": "วิทยาลัยบูรณาการศาสตร์",
+      "faculty_en": "College of Interdisciplinary Studies",
+      "program": "วท.บ. ศาสตร์แห่งแผ่นดินเพื่อการพัฒนาที่ยั่งยืน",
+      "program_en": "Bachelor of Science in Land Science for Sustainable Development",
+      "degree": "วท.บ.",
+      "file_path": "College of Interdisciplinary Studies/Bachelor of Science in Land Science for Sustainable Development.pdf",
+      "keywords": [
+        "ศาสตร์แห่งแผ่นดินเพื่อการพัฒนาที่ยั่งยืน",
+        "for",
+        "Development",
+        "Sustainable",
+        "Land"
+      ],
+      "department": "College of Interdisciplinary Studies"
+    }
+  ]
+}
