@@ -1,6 +1,6 @@
 # KUchat - Kasetsart University AI Chatbot
 
-A multi-modal AI chatbot system powered by dual large language models (Qwen3-Omni-30B and GPT-OSS-120B) with enhanced Retrieval-Augmented Generation capabilities. The system features hybrid search technology combining keyword matching with semantic search for fast and accurate responses about Kasetsart University academic programs.
+An AI chatbot system powered by GPT-OSS-20B with advanced Retrieval-Augmented Generation capabilities. The system features a three-stage search pipeline combining semantic search, cross-encoder reranking, and keyword boosting for accurate responses about Kasetsart University academic programs.
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -32,16 +32,7 @@ A multi-modal AI chatbot system powered by dual large language models (Qwen3-Omn
 
 ---
 
-## Deployment Options
-
-### Test Version (Google Colab Free/T4)
-For testing and development without costs:
-- **Notebook**: `colab_backend_test.ipynb`
-- **GPU**: T4 (15GB VRAM) - Available on Colab Free
-- **Model**: Qwen2-7B-Instruct (7B parameters)
-- **Speed**: 5-10 tokens/second
-- **Cost**: Free
-- **Purpose**: Test functionality before production deployment
+## Deployment
 
 ### Production Version (Google Colab Pro+ A100)
 For production use with best performance:
@@ -61,12 +52,6 @@ For production use with best performance:
 ## Features
 
 ### AI Model Architecture
-**Test Version:**
-- **Qwen2-7B-Instruct**: 7B parameter model with 4-bit quantization
-- Fits on T4 GPU (15GB VRAM)
-- Good quality for testing
-
-**Production Version:**
 - **GPT-OSS-20B**: High-performance text generation model with 20 billion parameters
 - **4-bit Quantization**: Unsloth-optimized BitsAndBytes quantization for efficient memory usage
 - **Expected VRAM**: Approximately 12GB for model, 10GB for RAG components, total ~22GB
@@ -94,186 +79,104 @@ For production use with best performance:
 - **Bilingual Support**: Thai and English language search
 
 ### User Interface
-- **Gradio 4.0+**: Modern web-based chat interface
-- **Multimodal Upload**: Support for images, audio, and video files
+- **Gradio 4.0+**: Modern web-based chat interface with public URL sharing
 - **Real-time Streaming**: Fast response generation with streaming output
-- **Configurable Parameters**: Temperature, max tokens, RAG toggle, web search toggle
+- **Configurable Parameters**: Temperature (0.1-1.0), max tokens (128-2048), RAG toggle, web search toggle
+- **System Log**: Real-time display of query processing stages and performance metrics
+- **Chat History**: Persistent conversation history during session
 
 ---
 
 ## System Architecture
 
-The system consists of two main components:
+All-in-one system running on Google Colab:
 
-### Backend (Google Colab)
-- Hosts both AI models on A100 GPU
-- Runs FastAPI server for API endpoints
-- Manages RAG system and document retrieval
-- Handles web search integration
-- Provides public access via Ngrok tunnel
-
-### Frontend (Local Computer)
-- Gradio web interface for user interaction
-- Connects to backend via HTTPS
-- Handles file uploads and multimodal inputs
-- Manages chat history and UI state
+### Single Integrated System (Google Colab)
+- **GPT-OSS-20B Model**: Main language model on A100 GPU
+- **RAG System**: Qdrant vector database with BGE-M3-Thai embeddings
+- **Web Search System**: DuckDuckGo and Wikipedia integration
+- **Gradio Interface**: Built-in web UI with public URL (share=True)
+- **No separate frontend**: Everything runs in one notebook
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    KUCHAT SYSTEM                            │
+│              KUCHAT SYSTEM (Google Colab)                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Gradio Web Interface (Public URL)                          │
+│         ↓                                                    │
+│  Chat Processing Function                                   │
+│         ↓                                                    │
+│  ┌─────────────┬──────────────┬─────────────┐              │
+│  │  RAG System │  GPT-OSS-20B │ Web Search  │              │
+│  │  (Qdrant)   │   (A100)     │  (Optional) │              │
+│  └─────────────┴──────────────┴─────────────┘              │
+│                                                              │
+│  All components run in single Colab notebook                │
 └─────────────────────────────────────────────────────────────┘
-
-    GOOGLE COLAB (Backend)              LOCAL COMPUTER (Frontend)
-    ══════════════════════              ═════════════════════════
-    
-    - Qwen3-Omni-30B Model              - Gradio Web Interface
-    - GPT-OSS-120B Model                - HTTP Client
-    - RAG System (ChromaDB)             - File Upload Handlers
-    - Web Search System                 - Chat UI Management
-    - FastAPI Server (Port 8000)
-    - Ngrok Public Tunnel               
-                   │                              │
-                   └──── HTTPS Connection ────────┘
 ```
 
 ---
 
 ## Prerequisites
 
-### For Test Version (Colab Free)
-- Google account (free Colab access)
-- HuggingFace account ([Create token](https://huggingface.co/settings/tokens))
-- Ngrok account ([Get token](https://dashboard.ngrok.com/get-started/your-authtoken))
-- Python 3.9+ for frontend
-
-### For Production Version (Colab Pro+)
 - Google Colab Pro Plus subscription (for A100 GPU access)
-- HuggingFace account with access token
-- Ngrok account with authentication token
-- Python 3.9+ for frontend
+- HuggingFace account with access token ([Create token](https://huggingface.co/settings/tokens))
+- Web browser to access the public Gradio URL
 
 ---
 
 ## Installation and Setup
 
-### Option 1: Test Version (Free - Recommended First)
+### Step 1: Access the Notebook
 
-**Perfect for testing before committing to Colab Pro+**
-
-#### Step 1: Deploy Test Backend on Colab Free
-
-1. Open **`colab_backend_test.ipynb`** in Google Colab
-2. **Select T4 GPU**: Runtime → Change runtime type → **T4 GPU**
-3. **Run all cells** in order:
-   - Install dependencies
-   - Load Qwen2-7B model (7B parameters)
-   - Initialize RAG system
-   - Start FastAPI server
-   - Start Ngrok tunnel
-4. **Copy the public URL** (e.g., `https://xxxx-xx-xx.ngrok.io`)
-
-#### Step 2: Run Frontend on Local Computer
-
-1. Install Python dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. Edit `frontend_app.py` and update the API URL:
-   ```python
-   API_URL = "https://your-ngrok-url-here"  # Paste the URL from Colab
-   ```
-
-3. Run the frontend:
-   ```bash
-   python frontend_app.py
-   ```
-
-4. Open browser to `http://localhost:7860`
-
-**Test the chatbot** If everything works, you can upgrade to production.
-
----
-
-### Option 2: Production Version (Colab Pro+)
-
-For production deployment with enhanced hybrid search:
-
-### Step 1: Clone Repository
-
-```bash
-git clone https://github.com/themistymoon/KUchat.git
-cd KUchat
-```
-
-### Step 2: Backend Setup (Google Colab)
-
-1. **Upload Notebook**
+1. **Open the Notebook**
    - Navigate to [Google Colab](https://colab.research.google.com/)
-   - Upload `colab_production_demo.ipynb` from this repository
+   - Go to File → Open Notebook → GitHub
+   - Enter: `themistymoon/KUchat`
+   - Select `colab_production_demo.ipynb`
+   
+   OR
+   
+   - Clone the repository and upload the notebook manually
 
 2. **Configure Runtime**
    - Click Runtime → Change runtime type
    - Set Hardware accelerator to GPU
-   - Set GPU type to A100
+   - Set GPU type to **A100** (requires Colab Pro+)
    - Click Save
 
-3. **Download Documents**
-   - Documents are automatically downloaded from GitHub repository via sparse checkout
-   - The system downloads only the `docs` folder to minimize bandwidth usage
-   - Required files include:
-     - `curricula_catalog.json` (v2.0 format with 131 programs and 863 keywords)
-     - `general_education_catalog.json` (204 General Education courses)
-     - All curriculum PDF files organized by faculty folders (20 faculties)
-   - Automatic document loading occurs in Cell 12 after RAG system initialization
+### Step 2: Configure and Run
 
-4. **Configure Tokens**
-   - In Cell 7: Replace `YOUR_HUGGINGFACE_TOKEN` with your HuggingFace token
-   - In Cell 21: Replace `YOUR_NGROK_TOKEN` with your Ngrok authentication token
+1. **Configure HuggingFace Token**
+   - In Cell 3 (Configuration), replace:
+     ```python
+     HF_TOKEN = "YOUR_HUGGINGFACE_TOKEN_HERE"
+     ```
+   - Paste your HuggingFace token from https://huggingface.co/settings/tokens
 
-5. **Execute Cells**
-   - Run cells sequentially from top to bottom
-   - Wait for each cell to complete before proceeding
+2. **Run All Cells Sequentially**
+   - Click Runtime → Run all
+   - OR run cells one by one from top to bottom
+   
+   **Cell Execution Flow:**
    - Cell 1: Install dependencies (~3-5 minutes)
-   - Cell 2: Import libraries and verify GPU availability
-   - Cell 3: Configure model settings and HuggingFace token
-   - Cell 4: Download documentation from GitHub repository
-   - Cell 5: Load GPT-OSS-20B Language Model (~2-3 minutes, ~12GB VRAM)
-   - Cell 6: Initialize RAG System with three-stage search pipeline
-   - Cell 7: Load curriculum documents and create vector embeddings (~3-5 minutes)
-   - Cell 8: Initialize web search system (DuckDuckGo and Wikipedia)
-   - Cell 9: Configure chat function with prompt engineering
-   - Cell 10: Launch Gradio demo interface with public URL
+   - Cell 2: Import libraries and verify A100 GPU
+   - Cell 3: Configuration (set your HuggingFace token here)
+   - Cell 4: Download documentation from GitHub (~1-2 minutes)
+   - Cell 5: Load GPT-OSS-20B model (~2-3 minutes, uses ~12GB VRAM)
+   - Cell 6: Initialize RAG System
+   - Cell 7: Load documents and create embeddings (~3-5 minutes, uses ~10GB VRAM)
+   - Cell 8: Initialize web search system
+   - Cell 9: Configure chat function
+   - Cell 10: Launch Gradio interface with public URL
 
-6. **Copy Ngrok URL**
-   - After Cell 21 completes, copy the PUBLIC URL displayed
-   - Example format: `https://xxxx-xx-xx-xx-xx.ngrok-free.app`
-
-### Step 3: Frontend Setup (Local Computer)
-
-1. **Install Dependencies**
-
-```bash
-cd KUchat
-pip install -r requirements.txt
-```
-
-2. **Configure API Endpoint**
-   - Open `frontend_app.py` in a text editor
-   - Locate line 16: `API_URL = "YOUR_NGROK_URL_HERE"`
-   - Replace with your Ngrok URL from Step 2.6
-   - Save the file
-
-3. **Run Frontend Application**
-
-```bash
-python frontend_app.py
-```
-
-4. **Access Web Interface**
-   - Open web browser
-   - Navigate to `http://127.0.0.1:7860`
-   - The chat interface should load successfully
+3. **Access the Chatbot**
+   - After Cell 10 completes, a public Gradio URL will be displayed
+   - Example: `https://xxxxxxxx.gradio.live`
+   - Click the URL or copy and paste it into your browser
+   - Share this URL with others to use the chatbot
+   - The chatbot is now live and accessible from anywhere
 
 ---
 
@@ -281,21 +184,13 @@ python frontend_app.py
 
 ```
 KUchat/
-├── colab_backend_test.ipynb         # Test backend (T4 GPU, Qwen2-7B-Instruct)
-├── colab_production_demo.ipynb      # Production backend (A100 GPU, advanced RAG)
-├── frontend_app.py                  # Gradio frontend application
-├── convert_md_to_json.py            # Catalog enhancement script
-├── setup.py                         # Automated setup script
-├── requirements.txt                 # Python dependencies
-├── start_frontend.ps1               # Windows PowerShell startup script
+├── colab_production_demo.ipynb      # Main notebook (all-in-one system)
 ├── .gitignore                       # Git ignore rules
 ├── LICENSE                          # MIT License
 ├── README.md                        # This documentation
 ├── ARCHITECTURE.md                  # System architecture documentation
-├── PROGRESS_REPORT.md               # Development progress and improvements
-├── IMPROVEMENT_OPPORTUNITIES.md     # Future enhancement roadmap
 │
-└── docs/                            # Document repository
+└── docs/                            # Document repository (auto-downloaded)
     ├── curricula_catalog.json       # Primary catalog (v2.0, 131 programs, 863 keywords)
     ├── general_education_catalog.json # General Education catalog (204 courses, 5 categories)
     ├── docs_location.md             # Documentation index
@@ -350,10 +245,11 @@ The system includes comprehensive curriculum information for Kasetsart Universit
 
 ### Basic Text Interaction
 
-1. Select model (Qwen3-Omni or GPT-OSS-120B)
-2. Type message in the text input field
+1. Open the public Gradio URL in your browser
+2. Type your question in the text input field
 3. Click Send or press Enter
 4. View AI response in chat history
+5. Monitor system log for query processing details
 
 ### Document Retrieval (RAG)
 
@@ -381,36 +277,29 @@ User: "What are the latest developments in artificial intelligence?"
 System: [Searches web] → Provides current information
 ```
 
-### Multimodal Input
+### Configuration Options
 
-1. Click "Upload Image" or "Upload Audio" button
-2. Select file from local system
-3. Optionally add text query
-4. Click Send
-5. Qwen3-Omni model processes multimodal input
-
-Supported formats:
-- Images: JPG, PNG, BMP, GIF
-- Audio: MP3, WAV, M4A
-- Video: MP4, AVI, MOV
+Adjust settings in the right sidebar:
+- **Temperature**: 0.1 (focused) to 1.0 (creative)
+- **Max Tokens**: 128-2048 (response length)
+- **Enable RAG**: Toggle document retrieval
+- **Enable Web Search**: Toggle web search
 
 ---
 
 ## Configuration
 
-### API Tokens
+### Required Token
 
 | Token | Purpose | Obtain From | Configuration Location |
 |-------|---------|-------------|----------------------|
-| HuggingFace Token | Model downloads | [HuggingFace Settings](https://huggingface.co/settings/tokens) | `colab_backend.ipynb` Cell 7 |
-| Ngrok Token | Public tunnel | [Ngrok Dashboard](https://dashboard.ngrok.com/get-started/your-authtoken) | `colab_backend.ipynb` Cell 21 |
-| Ngrok URL | Frontend connection | Generated by Cell 21 | `frontend_app.py` Line 16 |
+| HuggingFace Token | Model downloads | [HuggingFace Settings](https://huggingface.co/settings/tokens) | `colab_production_demo.ipynb` Cell 3 |
 
 ### Model Parameters
 
-Adjustable via frontend interface:
-- **Temperature**: Controls response randomness (0.1 - 2.0)
-- **Max Tokens**: Maximum response length (256 - 4096)
+Adjustable via Gradio interface:
+- **Temperature**: Controls response randomness (0.1 - 1.0)
+- **Max Tokens**: Maximum response length (128 - 2048)
 - **RAG Toggle**: Enable/disable document retrieval
 - **Web Search Toggle**: Enable/disable web search
 
@@ -418,25 +307,25 @@ Adjustable via frontend interface:
 
 ## Troubleshooting
 
-### Backend Connection Failed
+### Gradio URL Not Generated
 
-**Symptom**: Frontend cannot connect to backend
+**Symptom**: Cell 10 doesn't show a public URL
 
 **Solutions**:
-1. Verify Colab notebook is running (check Cell 17 status)
-2. Confirm Ngrok URL in `frontend_app.py` matches Cell 21 output
-3. Ensure URL includes `https://` protocol
-4. Check Colab session has not timed out
+1. Verify all previous cells completed successfully
+2. Check for error messages in cell outputs
+3. Restart runtime and run all cells again
+4. Ensure A100 GPU is allocated (check Cell 2 output)
 
 ### No Documents Found
 
 **Symptom**: RAG system reports no documents loaded
 
 **Solutions**:
-1. Verify `/content/docs/` folder exists in Colab file browser
-2. Check PDFs are uploaded with correct folder structure
-3. Re-execute Cell 23 (Auto-load documents)
-4. Review Cell 23 output for file loading statistics
+1. Verify Cell 4 (GitHub download) completed successfully
+2. Check `/content/docs/` folder exists in Colab file browser
+3. Re-execute Cell 7 (Load documents)
+4. Review Cell 7 output for file loading statistics
 
 ### GPU Memory Error
 
@@ -458,15 +347,14 @@ Adjustable via frontend interface:
 3. Check Colab internet connectivity
 4. Retry cell execution after brief wait
 
-### Frontend Installation Issues
+### Session Timeout
 
-**Symptom**: `pip install` fails or packages missing
+**Symptom**: Chatbot stops responding after some time
 
 **Solutions**:
-1. Upgrade pip: `python -m pip install --upgrade pip`
-2. Install packages individually if batch install fails
-3. Verify Python version is 3.9 or higher
-4. Use virtual environment to avoid conflicts
+1. Colab sessions time out after ~12 hours of inactivity
+2. Run Cell 10 again to restart Gradio interface
+3. For longer sessions, interact with the notebook periodically
 
 ---
 
@@ -621,28 +509,32 @@ Contributions are welcome. Please follow these steps:
 
 ## Deployment Options Comparison
 
-| Aspect | Local Test Version | Full Production Version |
-|--------|-------------------|-------------------------|
-| **Purpose** | Testing & Development | Production Use |
-| **Model** | Qwen2-7B-Instruct | GPT-OSS-20B (Unsloth 4-bit) |
-| **Hardware** | T4 GPU (Colab Free) | A100 GPU (Colab Pro+) |
-| **VRAM Required** | ~15GB | ~22GB (12GB model + 10GB RAG) |
-| **Setup Time** | 5-10 minutes | 10-15 minutes |
-| **Cost** | Free | ~$50/month (Colab Pro+) |
-| **RAG System** | Basic ChromaDB | Advanced Qdrant + Reranking |
-| **Catalogs** | Single catalog | Dual catalog (Curricula + Gen Ed) |
-| **Response Quality** | Good for testing | Excellent with context |
-| **Speed** | 5-10 tokens/sec | 40-80 tokens/sec |
-| **Search Pipeline** | Two-stage | Three-stage with reranking |
-| **Use Case** | Development, testing | Production, real users |
+## System Specifications
 
-**Recommendation**: Start with local test version to verify everything works, then deploy to Colab for production use.
+| Aspect | Details |
+|--------|---------|
+| **Purpose** | Production AI Chatbot |
+| **Model** | GPT-OSS-20B (Unsloth 4-bit) |
+| **Hardware** | A100 GPU (Colab Pro+) |
+| **VRAM Required** | ~22GB (12GB model + 10GB RAG) |
+| **Setup Time** | 10-15 minutes |
+| **Cost** | ~$50/month (Colab Pro+) |
+| **RAG System** | Qdrant + BGE-M3-Thai + Reranking |
+| **Catalogs** | Dual (Curricula + Gen Ed) |
+| **Response Quality** | Excellent with context |
+| **Speed** | 40-80 tokens/sec |
+| **Search Pipeline** | Three-stage with reranking |
+| **Interface** | Gradio with public URL |
+| **Deployment** | All-in-one Colab notebook |
+
+**Note**: This is a production-ready system. Simply run the notebook and share the generated Gradio URL.
 
 ---
 
 ## Technical Statistics
 
-- **Codebase**: ~1,500 lines of Python (production notebook)
+- **Deployment**: Single Colab notebook (all-in-one system)
+- **Codebase**: ~1,300 lines of Python
 - **Primary Catalog**: JSON v2.0 format with 131 curricula, 863 keywords, 20 faculties
 - **General Education Catalog**: 204 courses across 5 categories with detailed metadata
 - **Documents**: 130+ PDF curriculum files with automatic GitHub download
@@ -654,7 +546,7 @@ Contributions are welcome. Please follow these steps:
 - **Text Chunking**: 1500 characters per chunk, 300-character overlap
 - **Batch Processing**: 32 chunks per batch for embedding generation
 - **Supported Features**: RAG, web search (DuckDuckGo + Wikipedia), streaming responses
-- **Interface**: Gradio 4.0+ with public URL via share=True
+- **Interface**: Gradio 4.0+ with public URL sharing (no separate frontend needed)
 
 ---
 
