@@ -11,15 +11,24 @@ A multi-modal AI chatbot system powered by dual large language models (Qwen3-Omn
 ## What's New (Version 2.0)
 
 **Enhanced Search System**
-- **Hybrid Search**: Combines keyword pre-filtering with semantic search for 5-10x faster query responses
-- **JSON Catalog**: Structured curriculum catalog with 863 keywords across 131 programs
-- **Related Programs**: Automatic suggestion of similar programs based on shared keywords
-- **Improved Accuracy**: 85-95% relevance (up from 70-80%) with better Thai language support
+- **Advanced RAG Pipeline**: Three-stage retrieval process with broad search, reranking, and post-filtering with keyword boosting
+- **Dual-Catalog System**: Structured curriculum catalog (131 programs, 863 keywords) with integrated General Education catalog (204 courses)
+- **Smart Context Assembly**: Automatic inclusion of General Education requirements for year-level and course queries
+- **BGE-M3-Thai Embeddings**: Thai-optimized semantic search with 1024-dimensional vectors for superior accuracy
+- **Qdrant Vector Database**: High-performance in-memory vector database with cosine similarity search
+- **Cross-Encoder Reranking**: BGE-Reranker-v2-m3 for improved relevance scoring
+
+**General Education Integration**
+- Complete catalog of 204 General Education courses across 5 categories
+- Automatic requirement calculation (30 total credits: 2 required + 28 elective minimum)
+- Category-wise breakdown: Citizenship (21), Communication (76), Entrepreneurship (17), Aesthetics (16), Well-being (74)
+- Smart query detection automatically appends General Education context to relevant queries
 
 **Performance Improvements**
-- Query response time: 0.3-0.5 seconds (down from 2-3 seconds)
-- Average keywords per program: 6.6 (increased from 1.0)
-- Pre-filtering reduces search space from 131 to 10-20 relevant programs
+- Three-stage search strategy: Broad semantic search (50 candidates) followed by reranking and filtering
+- Average keywords per program: 6.6 keywords for precise matching
+- Enhanced Thai language support with normalized embeddings
+- Related program suggestions based on shared keywords and faculty associations
 
 ---
 
@@ -38,11 +47,14 @@ For testing and development without costs:
 For production use with best performance:
 - **Notebook**: `colab_production_demo.ipynb`
 - **GPU**: A100 (80GB VRAM) - Requires Colab Pro+
-- **Models**: Qwen3-Omni-30B + GPT-OSS-120B
-- **Search**: Hybrid keyword + semantic search
-- **Speed**: 20-50 tokens/second
+- **Model**: GPT-OSS-20B (4-bit quantized via Unsloth)
+- **RAG System**: Qdrant + BGE-M3-Thai embeddings + BGE-Reranker-v2-m3
+- **Catalogs**: Curricula (131 programs) + General Education (204 courses)
+- **Search**: Three-stage pipeline with broad search, reranking, and boosting
+- **Speed**: 40-80 tokens/second
+- **VRAM Usage**: Approximately 22GB (12GB model + 10GB RAG)
 - **Cost**: ~$1/hour
-- **Purpose**: Production deployment with enhanced RAG
+- **Purpose**: Production deployment with enterprise-grade RAG
 
 ---
 
@@ -55,20 +67,26 @@ For production use with best performance:
 - Good quality for testing
 
 **Production Version:**
-- **Qwen3-Omni-30B-A3B-Instruct**: Multimodal model supporting text, images, audio, and video inputs
-- **GPT-OSS-120B-Unsloth-BNB-4bit**: High-performance text generation model with 4-bit quantization
-- Both models optimized for NVIDIA A100 GPU execution
+- **GPT-OSS-20B**: High-performance text generation model with 20 billion parameters
+- **4-bit Quantization**: Unsloth-optimized BitsAndBytes quantization for efficient memory usage
+- **Expected VRAM**: Approximately 12GB for model, 10GB for RAG components, total ~22GB
+- **Inference Speed**: 40-80 tokens per second with 2x faster performance vs FP16
+- **Context Length**: 2048 tokens maximum sequence length
+- **Optimization**: FastLanguageModel with automatic dtype detection
 
 ### Retrieval-Augmented Generation (RAG)
-- **Catalog System**: Structured JSON catalog with 131 curricula from 20 faculties
-- **Keywords**: 863 total keywords (Thai and English) for accurate matching
-- **Hybrid Search**: Two-stage search process:
-  1. Keyword pre-filtering: Extract query keywords and match against catalog
-  2. Semantic search: Vector similarity search on filtered programs only
-- **Vector Database**: ChromaDB for efficient semantic search and retrieval
-- **Auto-loading**: Automatic document indexing at system startup
-- **Embedding Model**: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 for Thai-English support
-- **Related Programs**: Automatic suggestions based on shared keywords and topics
+- **Dual-Catalog System**:
+  - Primary Catalog: 131 curricula from 20 faculties with 863 keywords
+  - General Education Catalog: 204 courses across 5 categories with detailed metadata
+- **Advanced Search Pipeline**:
+  1. Broad Semantic Search: Retrieve 50 initial candidates without pre-filtering
+  2. Cross-Encoder Reranking: BGE-Reranker-v2-m3 for relevance scoring
+  3. Post-Filter with Boosting: Keyword-based score enhancement and top-K selection
+- **Vector Database**: Qdrant in-memory database with cosine similarity search
+- **Embedding Model**: BGE-M3-Thai (1024 dimensions) optimized for Thai language
+- **Smart Context Assembly**: Automatic General Education inclusion for year/course queries
+- **Document Processing**: RecursiveCharacterTextSplitter with 1500-character chunks and 300-character overlap
+- **Related Programs**: Automatic suggestions based on program IDs and keyword overlap
 
 ### Web Search Integration
 - **DuckDuckGo Search**: Real-time web search capabilities
@@ -200,12 +218,14 @@ cd KUchat
    - Set GPU type to A100
    - Click Save
 
-3. **Upload Documents**
-   - In Colab's file browser (left sidebar), create folder `/content/docs/`
-   - Upload the entire `docs` folder from this repository including:
-     - `curricula_catalog.json` (required for hybrid search)
-     - All PDF files organized by faculty folders
-   - Ensure folder structure is preserved with all faculty subfolders
+3. **Download Documents**
+   - Documents are automatically downloaded from GitHub repository via sparse checkout
+   - The system downloads only the `docs` folder to minimize bandwidth usage
+   - Required files include:
+     - `curricula_catalog.json` (v2.0 format with 131 programs and 863 keywords)
+     - `general_education_catalog.json` (204 General Education courses)
+     - All curriculum PDF files organized by faculty folders (20 faculties)
+   - Automatic document loading occurs in Cell 12 after RAG system initialization
 
 4. **Configure Tokens**
    - In Cell 7: Replace `YOUR_HUGGINGFACE_TOKEN` with your HuggingFace token
@@ -214,15 +234,16 @@ cd KUchat
 5. **Execute Cells**
    - Run cells sequentially from top to bottom
    - Wait for each cell to complete before proceeding
-   - Cell 3: Install dependencies (~5 minutes)
-   - Cell 7: Verify GPU and configure HuggingFace
-   - Cell 9: Load Qwen model (~3-5 minutes)
-   - Cell 12: Load GPT model (~2-3 minutes)
-   - Cell 15: Initialize RAG system
-   - Cell 17: Start FastAPI server
-   - Cell 21: Create Ngrok tunnel and obtain public URL
-   - Cell 23: Auto-load documents (~2-5 minutes)
-   - Cell 24: Initialize web search system
+   - Cell 1: Install dependencies (~3-5 minutes)
+   - Cell 2: Import libraries and verify GPU availability
+   - Cell 3: Configure model settings and HuggingFace token
+   - Cell 4: Download documentation from GitHub repository
+   - Cell 5: Load GPT-OSS-20B Language Model (~2-3 minutes, ~12GB VRAM)
+   - Cell 6: Initialize RAG System with three-stage search pipeline
+   - Cell 7: Load curriculum documents and create vector embeddings (~3-5 minutes)
+   - Cell 8: Initialize web search system (DuckDuckGo and Wikipedia)
+   - Cell 9: Configure chat function with prompt engineering
+   - Cell 10: Launch Gradio demo interface with public URL
 
 6. **Copy Ngrok URL**
    - After Cell 21 completes, copy the PUBLIC URL displayed
@@ -261,11 +282,11 @@ python frontend_app.py
 ```
 KUchat/
 ├── colab_backend_test.ipynb         # Test backend (T4 GPU, Qwen2-7B-Instruct)
-├── colab_production_demo.ipynb      # Production backend (A100 GPU, hybrid search)
+├── colab_production_demo.ipynb      # Production backend (A100 GPU, advanced RAG)
 ├── frontend_app.py                  # Gradio frontend application
 ├── convert_md_to_json.py            # Catalog enhancement script
 ├── setup.py                         # Automated setup script
-├── requirements.txt                 # Python dependencies for frontend
+├── requirements.txt                 # Python dependencies
 ├── start_frontend.ps1               # Windows PowerShell startup script
 ├── .gitignore                       # Git ignore rules
 ├── LICENSE                          # MIT License
@@ -275,9 +296,11 @@ KUchat/
 ├── IMPROVEMENT_OPPORTUNITIES.md     # Future enhancement roadmap
 │
 └── docs/                            # Document repository
-    ├── curricula_catalog.json       # Structured catalog (v2.0, 863 keywords)
+    ├── curricula_catalog.json       # Primary catalog (v2.0, 131 programs, 863 keywords)
+    ├── general_education_catalog.json # General Education catalog (204 courses, 5 categories)
+    ├── docs_location.md             # Documentation index
     ├── Agriculture/                 # 10 curriculum PDFs
-    ├── Science/                     # 18 curriculum PDFs
+    ├── Science/                     # 18 curriculum PDFs (including Computer Science)
     ├── Engineering/                 # 18 curriculum PDFs
     ├── Business Administration/     # 7 curriculum PDFs
     ├── Humanities/                  # 25 curriculum PDFs
@@ -286,6 +309,7 @@ KUchat/
     ├── Social Sciences/             # 8 curriculum PDFs
     ├── Veterinary Medicine/         # 2 curriculum PDFs
     ├── Medicine/                    # 1 curriculum PDF
+    ├── GeneralEducation/            # General Education course data
     └── ... (10 additional faculties)
 ```
 
@@ -452,34 +476,39 @@ Adjustable via frontend interface:
 
 | Model | Parameters | GPU Memory | Load Time | Inference Speed |
 |-------|-----------|------------|-----------|-----------------|
-| Qwen3-Omni-30B | ~30 billion | ~40 GB | 3-5 minutes | Fast |
-| GPT-OSS-120B-4bit | ~120 billion (quantized) | ~35 GB | 2-3 minutes | Very Fast |
+| GPT-OSS-20B | 20 billion | ~12 GB | 2-3 minutes | 40-80 tokens/sec |
+| RAG Components | N/A | ~10 GB | 3-5 minutes | N/A |
+| Total System | N/A | ~22 GB | 5-8 minutes | 40-80 tokens/sec |
 
 ### RAG System Performance
 
-- **Document Loading**: 2-5 minutes for 170+ PDFs
-- **Catalog Loading**: <1 second (JSON format)
-- **Keyword Extraction**: 10-50 milliseconds per query
-- **Pre-filtering**: Reduces search space by 80-90% (131 to 10-20 programs)
-- **Semantic Search**: 100-200 milliseconds on filtered set
-- **Total Query Time**: 0.3-0.5 seconds (hybrid search)
-- **Embedding Model**: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
-- **Chunk Size**: 1500 tokens with 300 token overlap
-- **Search Accuracy**: 85-95% relevance (improved from 70-80%)
+- **Catalog Loading**: Version 2.0 format with curricula array structure, loads in <1 second
+- **General Education Catalog**: 204 courses loaded instantly from JSON
+- **Document Loading**: 3-5 minutes for 130+ PDFs with automatic sparse checkout from GitHub
+- **Embedding Generation**: Batch processing (32 chunks per batch) with BGE-M3-Thai
+- **Vector Database**: Qdrant in-memory with 1024-dimensional vectors
+- **Search Pipeline**:
+  - Stage 1: Broad semantic search retrieves 50 candidates (no pre-filtering)
+  - Stage 2: Cross-encoder reranking for relevance scoring
+  - Stage 3: Post-filtering with keyword boosting and top-5 selection
+- **Query Processing**: Keyword extraction for year, semester, and program/major patterns
+- **Context Assembly**: Smart auto-append of General Education for year/course queries
+- **Chunk Configuration**: 1500 characters per chunk with 300-character overlap
+- **Search Accuracy**: High relevance through three-stage refinement process
 
 ### System Requirements
 
-**Minimum**:
-- A100 GPU (40GB VRAM minimum)
-- 32GB System RAM
-- 50GB Storage (for models and documents)
-- 10 Mbps internet connection
+**Production System (Google Colab)**:
+- A100 GPU (80GB VRAM recommended, 40GB minimum)
+- Google Colab Pro Plus subscription for A100 access
+- Stable internet connection for model downloads and GitHub repository access
+- Approximately 30GB storage for models and document cache
 
-**Recommended**:
-- A100 GPU (80GB VRAM)
-- 64GB System RAM
-- 100GB Storage
-- 50 Mbps internet connection
+**Local Frontend**:
+- Python 3.9 or higher
+- 4GB RAM minimum
+- Modern web browser (Chrome, Firefox, Edge, Safari)
+- Internet connection to communicate with Colab backend
 
 ---
 
@@ -559,25 +588,34 @@ Contributions are welcome. Please follow these steps:
 ### Development Roadmap
 
 **Version 2.0 (Current)**:
-- Enhanced hybrid search (keyword + semantic)
-- JSON catalog with 863 keywords
-- Related programs suggestions
-- Improved Thai language support
-- 5-10x faster query responses
+- Advanced three-stage RAG pipeline (broad search, reranking, post-filtering)
+- Dual-catalog system with General Education integration (204 courses)
+- BGE-M3-Thai embeddings with 1024-dimensional vectors
+- Qdrant vector database for high-performance similarity search
+- BGE-Reranker-v2-m3 cross-encoder for improved relevance
+- Smart context assembly with automatic General Education appending
+- Catalog v2.0 format with structured curricula array
+- Enhanced Thai language support with normalized embeddings
+- Related program suggestions based on keyword overlap
+
+**Implemented Advanced Features**:
+- Cross-encoder reranking (BGE-Reranker-v2-m3)
+- Post-processing to remove English chain-of-thought from responses
+- Comprehensive prompt engineering with few-shot examples
+- Keyword boosting for better result ranking
+- Fallback generation mode for error handling
 
 **Planned Features (v2.1+)**:
-- Query expansion with synonyms
-- Better error messages with program suggestions
-- Caching for frequently asked questions
-- Cross-encoder reranking for better accuracy
-- Analytics dashboard for usage tracking
-- Enhanced logging and debugging tools
+- Query expansion with Thai synonyms and related terms
+- Caching layer for frequently asked questions
+- Analytics dashboard for usage tracking and query patterns
+- Enhanced logging with structured output
 - Thai language interface localization
 - Voice input and output capabilities
-- Frontend document upload functionality
-- Persistent chat history storage
-- User authentication system
+- Persistent chat history with session management
+- User authentication and personalization
 - Mobile-responsive design improvements
+- API rate limiting and quota management
 
 ---
 
@@ -586,15 +624,17 @@ Contributions are welcome. Please follow these steps:
 | Aspect | Local Test Version | Full Production Version |
 |--------|-------------------|-------------------------|
 | **Purpose** | Testing & Development | Production Use |
-| **Model** | TinyLlama (1.1B) | Qwen3-Omni (30B) + GPT-OSS (120B) |
-| **Hardware** | CPU/Local GPU | Google Colab A100 GPU |
-| **RAM Required** | 8-16GB | 80GB GPU Memory |
-| **Setup Time** | 5 minutes | 15-20 minutes |
+| **Model** | Qwen2-7B-Instruct | GPT-OSS-20B (Unsloth 4-bit) |
+| **Hardware** | T4 GPU (Colab Free) | A100 GPU (Colab Pro+) |
+| **VRAM Required** | ~15GB | ~22GB (12GB model + 10GB RAG) |
+| **Setup Time** | 5-10 minutes | 10-15 minutes |
 | **Cost** | Free | ~$50/month (Colab Pro+) |
-| **Response Quality** | Good for testing | Excellent |
-| **Multimodal** | No (text only) | Yes (images, audio, video) |
-| **Speed** | 1-5 tokens/sec (CPU) | 20-50 tokens/sec (GPU) |
-| **Use Case** | Code testing, development | Real users, production |
+| **RAG System** | Basic ChromaDB | Advanced Qdrant + Reranking |
+| **Catalogs** | Single catalog | Dual catalog (Curricula + Gen Ed) |
+| **Response Quality** | Good for testing | Excellent with context |
+| **Speed** | 5-10 tokens/sec | 40-80 tokens/sec |
+| **Search Pipeline** | Two-stage | Three-stage with reranking |
+| **Use Case** | Development, testing | Production, real users |
 
 **Recommendation**: Start with local test version to verify everything works, then deploy to Colab for production use.
 
@@ -602,17 +642,19 @@ Contributions are welcome. Please follow these steps:
 
 ## Technical Statistics
 
-- **Codebase**: ~2,000 lines of Python
-- **Catalog**: JSON format with 131 curricula, 863 keywords
-- **Documents**: 170+ PDF curriculum files
-- **Faculties Covered**: 20 academic faculties
-- **AI Models**: 2 large language models (30B + 120B parameters)
-- **Search System**: Hybrid (keyword pre-filter + semantic search)
-- **Supported Input Formats**: Text, PDF, Images (JPG/PNG), Audio (MP3/WAV), Video (MP4)
-- **API Endpoints**: 8 FastAPI routes
-- **Vector Database**: ChromaDB with ~15,000+ text chunks
-- **Average Query Time**: 0.3-0.5 seconds (v2.0 hybrid search)
-- **Search Accuracy**: 85-95% relevance
+- **Codebase**: ~1,500 lines of Python (production notebook)
+- **Primary Catalog**: JSON v2.0 format with 131 curricula, 863 keywords, 20 faculties
+- **General Education Catalog**: 204 courses across 5 categories with detailed metadata
+- **Documents**: 130+ PDF curriculum files with automatic GitHub download
+- **AI Model**: GPT-OSS-20B (20 billion parameters, 4-bit quantized)
+- **Embedding Model**: BGE-M3-Thai (1024 dimensions, Thai-optimized)
+- **Reranker**: BGE-Reranker-v2-m3 cross-encoder
+- **Vector Database**: Qdrant in-memory with cosine similarity
+- **Search Pipeline**: Three-stage (broad search, reranking, post-filtering with boosting)
+- **Text Chunking**: 1500 characters per chunk, 300-character overlap
+- **Batch Processing**: 32 chunks per batch for embedding generation
+- **Supported Features**: RAG, web search (DuckDuckGo + Wikipedia), streaming responses
+- **Interface**: Gradio 4.0+ with public URL via share=True
 
 ---
 
