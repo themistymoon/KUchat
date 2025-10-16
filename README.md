@@ -8,9 +8,20 @@ An AI chatbot system powered by GPT-OSS-20B with advanced Retrieval-Augmented Ge
 
 ---
 
-## What's New (Version 2.0)
+## What's New (Version 2.1)
 
-**Enhanced Search System**
+**Critical Bug Fixes**
+- **Path Conversion Fix**: Resolved catalog metadata lookup failure caused by absolute/relative path mismatch
+  - Issue: System used absolute Windows paths (`C:\Users\...\Medicine\...`) to lookup catalog entries stored with relative paths (`Medicine/...`)
+  - Impact: All documents had `faculty='Unknown'`, preventing proper keyword boosting and retrieval
+  - Solution: Convert absolute paths to relative paths before catalog lookup using `os.path.relpath()`
+- **Expanded Faculty Mappings**: Increased faculty coverage from 10 to 20+ faculties for comprehensive keyword boosting
+  - Added: Medicine (แพทยศาสตร์), Nursing (พยาบาลศาสตร์), Pharmacy (เภสัชศาสตร์), Veterinary Medicine (สัตวแพทยศาสตร์)
+  - Added: Forestry (ป่าไม้), Fisheries (ประมง), Environment (สิ่งแวดล้อม), Agro-Industry (อุตสาหกรรมเกษตร)
+  - Added: Architecture (สถาปัตยกรรม), Interdisciplinary Studies (บูรณาการศาสตร์), and more
+  - Impact: Better keyword extraction and score boosting for previously missing faculties
+
+**Enhanced Search System (Version 2.0)**
 - **Advanced RAG Pipeline**: Three-stage retrieval process with broad search, reranking, and post-filtering with keyword boosting
 - **Dual-Catalog System**: Structured curriculum catalog (131 programs, 863 keywords) with integrated General Education catalog (204 courses)
 - **Smart Context Assembly**: Automatic inclusion of General Education requirements for year-level and course queries

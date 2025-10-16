@@ -1,4 +1,4 @@
-# System Architecture Documentation (Version 2.0)
+# System Architecture Documentation (Version 2.1)
 
 ## System Overview
 
@@ -8,14 +8,14 @@ KUchat is an AI-powered chatbot system for Kasetsart University curriculum infor
 - **Language Model**: GPT-OSS-20B (4-bit quantized via Unsloth)
 - **Deployment Platform**: Google Colab with A100 GPU
 - **Interface**: Gradio 4.0+ with public URL sharing
-- **RAG System**: Advanced three-stage retrieval pipeline
+- **RAG System**: Advanced three-stage retrieval pipeline with path normalization
 - **Vector Database**: Qdrant in-memory with cosine similarity
 - **Embedding Model**: BGE-M3-Thai (1024 dimensions, Thai-optimized)
 - **Reranker**: BGE-Reranker-v2-m3 cross-encoder
 - **Dual-Catalog System**: 
   - Primary: 131 curricula, 20 faculties, 863 keywords
   - Secondary: 204 General Education courses, 5 categories
-
+- **Faculty Mappings**: 20+ faculties with comprehensive Thai/English keyword synonyms
 ---
 
 ## Overall System Architecture
@@ -119,14 +119,14 @@ KUchat is an AI-powered chatbot system for Kasetsart University curriculum infor
 └──────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────────┐
-│  STAGE 1: DOCUMENT PROCESSING                                    │
+│  STAGE 1: DOCUMENT PROCESSING         │
 ├──────────────────────────────────────────────────────────────────┤
 │                                                                   │
 │  GitHub Repository                                                │
 │       ↓ (Sparse Checkout - docs folder only)                    │
 │  Download docs/                                                   │
 │       ↓                                                           │
-│  PDF Files (130+ curricula)                                      │
+│  PDF Files (131 curricula)                                       │
 │       ↓                                                           │
 │  PyPDFLoader                                                      │
 │       ↓                                                           │
@@ -136,9 +136,32 @@ KUchat is an AI-powered chatbot system for Kasetsart University curriculum infor
 │    • Chunk Size: 1500 characters                                 │
 │    • Overlap: 300 characters                                     │
 │       ↓                                                           │
-│  Text Chunks (with metadata)                                     │
+│  Text Chunks (with metadata lookup)                              │
+│  ┌────────────────────────────────────────┐                     │
+│  │  FOR EACH PDF:                          │                     │
+│  │  1. Load PDF from absolute path         │                     │
+│  │     e.g., "C:\...\Medicine\Faculty.pdf" │                     │
+│  │                                         │                     │
+│  │  2. Convert to relative path (FIX v2.1) │                     │
+│  │     relative_path = os.path.relpath()   │                     │
+│  │     → "Medicine/Faculty of Medicine.pdf"│                     │
+│  │                                         │                     │
+│  │  3. Lookup catalog metadata             │                     │
+│  │     catalog_metadata = catalog.get(     │                     │
+│  │         relative_path, {}               │                     │
+│  │     )                                   │                     │
+│  │                                         │                     │
+│  │  4. Extract metadata fields:            │                     │
+│  │     • program: "พ.บ. แพทยศาสตร์"        │                     │
+│  │     • faculty: "คณะแพทยศาสตร์"          │                     │
+│  │     • degree: "Bachelor"                │                     │
+│  │     • id: "MED-001"                     │                     │
+│  │     • keywords: ["medicine", "แพทย์"]   │                     │
+│  └────────────────────────────────────────┘                     │
+│       ↓                                                           │
+│  Text Chunks with Complete Metadata                              │
 │    • file_path, file_name, chunk_index                           │
-│    • program, faculty, degree, id, keywords                      │
+│    • program, faculty, degree, id, keywords     │
 │       ↓                                                           │
 │  BGE-M3-Thai Embedding Model                                     │
 │    • Batch Size: 32 chunks                                       │
@@ -151,6 +174,7 @@ KUchat is an AI-powered chatbot system for Kasetsart University curriculum infor
 │    • Collection: "ku_curricula"                                  │
 │    • Distance: Cosine                                            │
 │    • Storage: In-memory                                          │
+│    • Payload: {text, file_name, program, faculty, keywords, ...} │
 └──────────────────────────────────────────────────────────────────┘
 
 ┌──────────────────────────────────────────────────────────────────┐
@@ -160,10 +184,13 @@ KUchat is an AI-powered chatbot system for Kasetsart University curriculum infor
 │  User Query                                                       │
 │       ↓                                                           │
 │  ┌─────────────────────────────────────────┐                    │
-│  │  SUBSTAGE 1: KEYWORD EXTRACTION         │                    │
+│  │  SUBSTAGE 1: KEYWORD EXTRACTION (v2.1)  │                    │
 │  │  • Extract year patterns (ปี 1-4)       │                    │
 │  │  • Extract semester (ภาค 1-2, ฤดูร้อน)  │                    │
 │  │  • Extract program/major synonyms       │                    │
+│  │  • Use expanded faculty_mappings:       │                    │
+│  │    - 20+ faculties (up from 10)         │                    │
+│  │    - Medicine, Nursing, Pharmacy, etc.  │                    │
 │  │  • Build keyword list for BOOSTING      │                    │
 │  └─────────────────────────────────────────┘                    │
 │       ↓                                                           │
@@ -507,6 +534,54 @@ Return context + source metadata
 - Include required courses
 - Include category breakdown with sample courses
 - Add to source metadata
+
+### Faculty Mappings System
+
+**Purpose**: Extract Thai/English keywords from queries for score boosting
+
+**Coverage**: 20+ faculties (expanded from 10 in v2.0)
+
+**Mapping Structure**:
+```python
+faculty_mappings = {
+    "วิทยาศาสตร์": ["science", "sci", "วิทย์"],
+    "แพทยศาสตร์": ["medicine", "medical", "แพทย์", "หมอ", "แพทย์ศาสตร์"],
+    "พยาบาลศาสตร์": ["nursing", "พยาบาล", "นางพยาบาล"],
+    # ... 20+ total faculties
+}
+```
+
+**New Faculties Added (v2.1)**:
+- Medicine (แพทยศาสตร์) - `["medicine", "medical", "แพทย์", "หมอ"]`
+- Nursing (พยาบาลศาสตร์) - `["nursing", "พยาบาล", "นางพยาบาล"]`
+- Pharmacy (เภสัชศาสตร์) - `["pharmacy", "เภสัช", "เภสัชกร"]`
+- Veterinary Medicine (สัตวแพทยศาสตร์) - `["veterinary", "สัตวแพทย์", "หมอสัตว์"]`
+- Forestry (ป่าไม้) - `["forestry", "ป่าไม้", "forest"]`
+- Fisheries (ประมง) - `["fisheries", "ประมง", "fish"]`
+- Environment (สิ่งแวดล้อม) - `["environment", "environmental", "สิ่งแวดล้อม"]`
+- Agro-Industry (อุตสาหกรรมเกษตร) - `["agro-industry", "agro", "อุตสาหกรรมเกษตร"]`
+- Architecture (สถาปัตยกรรม) - `["architecture", "สถาปัตย์", "arch"]`
+- Interdisciplinary Studies (บูรณาการศาสตร์) - `["interdisciplinary", "บูรณาการ"]`
+- French Language (ภาษาฝรั่งเศส) - `["french", "ฝรั่งเศส"]`
+- Philosophy (ปรัชญา) - `["philosophy", "ปรัชญา"]`
+- History (ประวัติศาสตร์) - `["history", "ประวัติศาสตร์"]`
+- Psychology (จิตวิทยา) - `["psychology", "จิตวิทยา"]`
+- Home Economics (คหกรรมศาสตร์) - `["home economics", "คหกรรม"]`
+- Computer Engineering (วิศวกรรมคอมพิวเตอร์) - `["computer engineering", "cpe", "คอมพิวเตอร์"]`
+
+**Usage in Query Processing**:
+1. Query: "หลักสูตรแพทยศาสตร์" 
+2. Extract keywords: `["แพทยศาสตร์"]` (matches "แพทย์" in mapping)
+3. Apply boost during Stage 3:
+   - If chunk text contains "แพทย์": +0.1
+   - If program name contains "แพทยศาสตร์": +0.2
+   - If faculty name contains "แพทยศาสตร์": +0.1
+4. Total possible boost: +0.4 per keyword match
+
+**Impact**:
+- Before v2.1: Medicine queries failed (no keywords, no boost)
+- After v2.1: Medicine queries succeed with proper boosting
+- Applies to all 20+ faculties comprehensively
 
 ### Post-Processing Pipeline
 
